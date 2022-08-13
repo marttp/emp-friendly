@@ -36,6 +36,8 @@
 
 - **Product** - Spring WebFlux (Kotlin)
 
+- **Location** - Spring WebFlux (Java)
+
 - **Order** - Spring Boot (Kotlin)
 
 - **Payment** - Spring Boot (Kotlin)
@@ -53,6 +55,8 @@
 - **QR Code** - Sanic
 
 - **Invoice** - Sanic
+
+- **Coupon** - Sanic
 
 ---
 
