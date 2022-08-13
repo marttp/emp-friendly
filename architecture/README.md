@@ -7,8 +7,6 @@
 - Redis Stack (Cloud)
 - Kubernetes (Deployment/Service/Ingress/Secret)
 
----
-
 ## Architecture
 
 ![Architecture](Technical%20High-Level%20Architecture.drawio.png)
@@ -18,13 +16,11 @@
 - Internal service will communicate via Kubernetes namespace svc url
 - Secret will store only Redis connection related
 
----
-
 ## Describe on each microservices
 
 ### Aggregator layer
 
-- **General** - Spring WebFlux (Kotlin)
+- **General** - Spring WebFlux (Kotlin) + GraphQL
 
 - **Driver** - Spring WebFlux (Java)
 
@@ -32,19 +28,21 @@
 
 ### Internal layer
 
-- **Employee** - Spring WebFlux (Java)
+This layer will interact directly with Redis Cloud
 
-- **Product** - Spring WebFlux (Kotlin)
+- **Employee** - Spring WebFlux (Java) [Repository]
 
-- **Location** - Spring WebFlux (Java)
+- **Product** - Spring WebFlux (Kotlin) [EntityStream]
 
-- **Order** - Spring Boot (Kotlin)
+- **Location** - Spring WebFlux (Java) [EntityStream]
 
-- **Payment** - Spring Boot (Kotlin)
+- **Order** - Spring Boot (Kotlin) [Repository]
 
-- **Shipment** - Spring Boot (Java)
+- **Payment** - Spring Boot (Kotlin) [Repository]
 
-- **Point** - Spring Boot (Java)
+- **Shipment** - Spring Boot (Java) [EntityStream]
+
+- **Point** - Spring Boot (Java) [Repository]
 
 - **Rating** - Sanic
 
@@ -57,8 +55,6 @@
 - **Invoice** - Sanic
 
 - **Coupon** - Sanic
-
----
 
 ## Service communication methodology
 
