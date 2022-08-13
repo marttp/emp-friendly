@@ -12,8 +12,8 @@
     "deploy_buttons": [],
     "language": ["Java", "Kotlin", "Python"],
     "redis_commands": [], // Enter all the Redis commands
-    "redis_features": ["primary database", "stream", "pub/sub"],
-    "redis_modules": ["RediJSON", "RediSearch", "RedisTimeseries"],
+    "redis_features": ["primary database", "caching", "stream", "pub/sub"],
+    "redis_modules": ["RediJSON", "RediSearch", "RedisStreams", "RedisTimeseries"],
     "app_image_urls": [],
     "youtube_url": "", //Provide a Youtube link to your app's video
     "special_tags": ["Hackathon"],
