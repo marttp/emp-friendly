@@ -1,6 +1,6 @@
 # EmpFriendly
 
-EmpFriendly [Redis Hackathon on DEV 2022] - Support you employees and be better
+EmpFriendly [Redis Hackathon on DEV 2022] - Support you employees and strive to be better
 
 [Insert app screenshots](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#uploading-assets)
 
