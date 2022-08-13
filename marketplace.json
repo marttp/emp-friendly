@@ -2,22 +2,21 @@
     "app_name": "EmpFriendly",
     "description": "EmpFriendly - Internal service for support you employees and strive to be better",
     "hidden": "false",
-    "rank": "", // This is used to sort the apps in the launchpad. 1 to 20 are reserved. Enter greater than 20
+    "rank": 55,
     "type": "Building Block",
     "contributed_by": "Community",
-    "repo_url": "", //This is the Gitub Repo's URL.
-    "download_url": "",//This is a direct link to the Github's download button so people can download it directly from the Marketplace
+    "repo_url": "https://github.com/marttp/emp-friendly",
+    "download_url": "https://github.com/marttp/emp-friendly/archive/refs/heads/main.zip",
     "hosted_url": "",
     "quick_deploy": "false",
     "deploy_buttons": [],
     "language": ["Java", "Kotlin", "Python"],
     "redis_commands": [], // Enter all the Redis commands
-    "redis_features": ["caching"],// Enter any core Redis feature or leave it blank.
-    "redis_modules": [], //Value can be one or more of "RediJSON", "", "RedisTimeseries", "RedisAI"  "RedisGears" or "RedisGraph" listed in an array. 
-    "app_image_urls": [
-    ], // Provide any image urls in an array.
+    "redis_features": ["primary database", "stream", "pub/sub"],
+    "redis_modules": ["RediJSON", "RediSearch", "RedisTimeseries"],
+    "app_image_urls": [],
     "youtube_url": "", //Provide a Youtube link to your app's video
     "special_tags": ["Hackathon"],
     "verticals": ["Technology"], 
-    "markdown": "" // Link to the RAW Markdown.
+    "markdown": "https://raw.githubusercontent.com/marttp/emp-friendly/main/README.md"
 }
