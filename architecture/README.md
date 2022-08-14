@@ -52,9 +52,9 @@ This layer will interact directly with Redis Cloud
 
 - **QR Code** - Sanic
 
-- **Invoice** - Sanic
+- **Invoice** - FastAPI
 
-- **Coupon** - Sanic
+- **Coupon** - FastAPI
 
 ## Service communication methodology
 
