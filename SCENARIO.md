@@ -49,6 +49,6 @@ EmpFriendly concept - do something that can improve employee life and give oppor
 
 ## System
 
-- Send notification
-- Generate Invoice
+- Send notification [Skeleton Message ✅]
+- Generate Invoice [Skeleton Message ✅]
 - Assign internal buying to Deliver **[only Shipment purpose]**

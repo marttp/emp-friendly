@@ -5,3 +5,5 @@ metadata:
   namespace: emp-friendly
 data:
   RECEIVED_RATING_TOPIC_NAME: 'received-rating-topic'
+  INVOICE_CREATE_TOPIC_NAME: 'invoice-create-topic'
+  NOTIFICATION_SENT_TOPIC_NAME: 'notification-sent-topic'

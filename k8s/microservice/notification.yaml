@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: emp-friendly-rating
+  name: emp-friendly-notification
   namespace: emp-friendly
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: emp-friendly-rating
+      app: emp-friendly-notification
   template:
     metadata:
       labels:
-        app: emp-friendly-rating
+        app: emp-friendly-notification
     spec:
       containers:
-        - name: emp-friendly-rating
-          image: marttp/emp-friendly-rating
+        - name: emp-friendly-notification
+          image: marttp/emp-friendly-notification
           resources:
             requests:
               cpu: 300m
@@ -25,14 +25,14 @@ spec:
               memory: 512Mi
           ports:
             - containerPort: 8000
-              name: rating
+              name: notification
               protocol: TCP
           env:
-            - name: RECEIVED_RATING_TOPIC_NAME
+            - name: NOTIFICATION_SENT_TOPIC_NAME
               valueFrom:
                 configMapKeyRef:
                   name: emp-friendly-cm
-                  key: RECEIVED_RATING_TOPIC_NAME
+                  key: NOTIFICATION_SENT_TOPIC_NAME
             - name: REDIS_OM_URL
               valueFrom:
                 secretKeyRef:
