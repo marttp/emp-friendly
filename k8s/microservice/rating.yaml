@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emp-friendly-rating
+  namespace: emp-friendly
+  labels:
+    field.cattle.io/projectId: p-82znb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emp-friendly-rating
+  template:
+    metadata:
+      labels:
+        app: emp-friendly-rating
+    spec:
+      containers:
+        - name: emp-friendly-rating
+          image: marttp/emp-friendly-rating
+          resources:
+            requests:
+              cpu: 300m
+              memory: 512Mi
+            limits:
+              cpu: 300m
+              memory: 512Mi
+          ports:
+            - containerPort: 8000
+              name: rating
+              protocol: TCP
+          env:
+            - name: RECEIVED_RATING_TOPIC_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: RECEIVED_RATING_TOPIC_NAME
+            - name: REDIS_OM_URL
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secrect
+                  key: REDIS_OM_URL

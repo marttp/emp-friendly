@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: emp-friendly-cm
+  namespace: emp-friendly
+data:
+  RECEIVED_RATING_TOPIC_NAME: 'received-rating-topic'
