@@ -27,6 +27,13 @@ python3 -m venv venv #Linux/macOS
 python -m venv venv #Windows
 ```
 
+Active Virtual Environment
+
+```bash
+source ./venv/bin/activate #Linux/macOS
+.\venv\Scripts\activate #Windows
+```
+
 Install Libraries from requirements.txt file
 
 ```bash
