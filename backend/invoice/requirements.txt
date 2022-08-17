@@ -1,0 +1,2 @@
+fastapi==0.79.0
+redis-om==0.0.27
