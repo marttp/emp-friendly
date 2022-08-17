@@ -1,3 +1,3 @@
 import os
 
-received_rating_topic = os.getenv('RECEIVED_RATING_TOPIC_NAME', 'received-rating-topic')
+notification_sent_topic = os.getenv('NOTIFICATION_SENT_TOPIC_NAME', 'notification-sent-topic')
