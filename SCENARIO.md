@@ -21,7 +21,7 @@ EmpFriendly concept - do something that can improve employee life and give oppor
 - Use Journey
 - **[Journey]** Watch driver location in order by point of time (In real-time)
 - Use Deliver
-- Use Yummy
+- Use Yummy [Send rating / Get rating]
 - Use IC Buy
 
 ## Driver
