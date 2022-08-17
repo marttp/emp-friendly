@@ -68,3 +68,11 @@ Deploy all kind to your cluster!
 ```bash
 kubectl apply -f ./k8s
 ```
+
+Port-Forward to check on local
+
+```bash
+kubectl port-forward pods/<POD_NAME> <YOUR_PORT>:<TARGET_PORT>
+kubectl port-forward deployment/<DEPLOYMENT_NAME> <YOUR_PORT>:<TARGET_PORT>
+kubectl port-forward service/<SERVICE_NAME> <YOUR_PORT>:<TARGET_PORT>
+```
