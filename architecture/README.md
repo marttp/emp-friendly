@@ -3,7 +3,7 @@
 ## Tech Stack
 
 - Spring Boot/WebFlux [Java/Kotlin] + Redis OM Spring
-- Sanic [Python] + Redis OM Python
+- Sanic, FastAPI [Python] + Redis OM Python
 - Redis Stack (Cloud)
 - Kubernetes (Deployment/Service/Ingress/Secret)
 
@@ -46,15 +46,13 @@ This layer will interact directly with Redis Cloud
 
 - **Rating** - Sanic
 
-- **Restaurant Management** - Sanic
+- **Restaurant Management** - FastAPI
 
 - **Notification** - Sanic
 
-- **QR Code** - Sanic
+- **QR Code** - FastAPI
 
 - **Invoice** - FastAPI
-
-- **Coupon** - FastAPI
 
 ## Service communication methodology
 
