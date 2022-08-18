@@ -15,7 +15,7 @@ EmpFriendly concept - do something that can improve employee life and give oppor
 
 ## Employee
 
-- [x] Get own transaction history ✅
+- [x] Get own transaction history
 - [ ] Pay IC Point to restaurant partner
 - ~~Pay IC Point to internal shop~~
 - [ ] Use Journey
