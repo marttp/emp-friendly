@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emp-friendly-employee
+  namespace: emp-friendly
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emp-friendly-employee
+  template:
+    metadata:
+      labels:
+        app: emp-friendly-employee
+    spec:
+      containers:
+        - name: emp-friendly-employee
+          image: marttp/emp-friendly-employee
+          resources:
+            requests:
+              cpu: 300m
+              memory: 512Mi
+            limits:
+              cpu: 300m
+              memory: 512Mi
+          ports:
+            - containerPort: 8080
+              name: employee
+              protocol: TCP
+          env:
+            - name: NOTIFICATION_SENT_TOPIC_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: NOTIFICATION_SENT_TOPIC_NAME
+            - name: REDIS_OM_URL
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secrect
+                  key: REDIS_OM_URL
