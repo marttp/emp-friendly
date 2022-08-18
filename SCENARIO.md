@@ -41,10 +41,9 @@ EmpFriendly concept - do something that can improve employee life and give oppor
 - Get history of personal top-up (Immutable)
 - Get marketplace order history (Immutable)
 - CRUD - Restaurant Partner
-- CRU - Employee (able to mark driver)
+- CRU - Employee ✅
 - Promote employee to driver
 - Watch driver location in order by point of time (In real-time)
-- CRUD coupon in topup scenario (campaign)
 - Add Internal products and declare IC Point
 
 ## System

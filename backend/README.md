@@ -15,7 +15,7 @@
 Build container image
 
 ```bash
-gradle jib --image=<YOUR_IMAGE_TARGET>
+./gradlew jib --image=<YOUR_IMAGE_TARGET>
 ```
 
 ### Python
