@@ -20,40 +20,40 @@
 
 ### Aggregator layer
 
-- **General** - Spring WebFlux (Kotlin) + GraphQL
+- [ ] **General** - Spring WebFlux (Kotlin) + GraphQL
 
-- **Driver** - Spring WebFlux (Java)
+- [ ] **Driver** - Spring WebFlux (Java)
 
-- **Management** - Spring WebFlux + GraphQL (Java)
+- [ ] **Management** - Spring WebFlux + GraphQL (Java)
 
 ### Internal layer
 
 This layer will interact directly with Redis Cloud
 #### **[NOTICE] I can't use $ for EntitySteam with no reasons (Autowired, Constructor Injection) so I changeed plan to use only repository**
 
-- **Employee** - Spring WebFlux (Java) [Repository]
+- [x] **Employee** - Spring WebFlux (Java) [Repository]
 
-- **Product** - Spring WebFlux (Kotlin) ~~[EntityStream]~~ [Repository]
+- ~~**Product** - Spring WebFlux (Kotlin) ~~[EntityStream]~~ [Repository]~~
 
-- **Location** - Spring WebFlux (Java) ~~[EntityStream]~~ [Repository]
+- [ ] **Location** - Spring WebFlux (Java) ~~[EntityStream]~~ [Repository]
 
-- **Order** - Spring Boot (Kotlin) [Repository]
+- [ ] **Order** - Spring Boot (Kotlin) [Repository]
 
-- **Payment** - Spring Boot (Kotlin) [Repository]
+- [ ] **Payment** - Spring Boot (Kotlin) [Repository]
 
-- **Shipment** - Spring Boot (Java) **(Skeleton)**
+- [x] **Shipment** - Spring Boot (Java) **(Skeleton)**
 
-- **Point** - Spring Boot (Java) [Repository]
+- [x] **Point** - Spring Boot (Java) [Repository]
 
-- **Rating** - Sanic
+- [x] **Rating** - Sanic
 
-- **Restaurant Management** - FastAPI
+- [ ] **Restaurant Management** - FastAPI
 
-- **Notification** - Sanic **(Skeleton)**
+- [x] **Notification** - Sanic **(Skeleton)**
 
-- **QR Code** - FastAPI
+- [ ] **QR Code** - FastAPI
 
-- **Invoice** - FastAPI **(Skeleton)**
+- [x] **Invoice** - FastAPI **(Skeleton)**
 
 ## Service communication methodology
 

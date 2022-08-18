@@ -15,39 +15,39 @@ EmpFriendly concept - do something that can improve employee life and give oppor
 
 ## Employee
 
-- Get own transaction history ✅
-- Pay IC Point to restaurant partner
-- Pay IC Point to internal shop
-- Use Journey
-- **[Journey]** Watch driver location in order by point of time (In real-time)
-- Use Deliver
-- Use Yummy [Send rating / Get rating]
-- Use IC Buy
+- [x] Get own transaction history ✅
+- [ ] Pay IC Point to restaurant partner
+- ~~Pay IC Point to internal shop~~
+- [ ] Use Journey
+- [ ] **[Journey]** Watch driver location in order by point of time (In real-time)
+- [ ] Use Deliver
+- [ ] Use Yummy [Send rating / Get rating]
+- ~~Use IC Buy~~
 
 ## Driver
 
-- Take the transport request **[Journey]**
-- Take the delivery request **[Deliver]**
+- [ ] Take the transport request **[Journey]**
+- ~~Take the delivery request **[Deliver]**~~
 
 ## Restaurant Partner
 
-- CRUD Menu
-- Generate QR Code to IC Point Payment
-- Withdraw IC Point to Cash (can extend to transfer method) ✅ [with only deduct endpoint]
+- [ ] CRUD Menu
+- [ ] Generate QR Code to IC Point Payment
+- [x] Withdraw IC Point to Cash (can extend to transfer method) [with only deduct endpoint]
 
 ## Admin/Officer
 
-- Topup IC Point ✅
-- Get history of personal top-up (Immutable) ✅
-- Get marketplace order history (Immutable)
-- CRUD - Restaurant Partner
-- CRU - Employee ✅
-- Promote employee to driver (Use Edit method) ✅
-- Watch driver location in order by point of time (In real-time)
-- Add Internal products and declare IC Point (CRUD Product)
+- [x] Topup IC Point
+- [x] Get history of personal top-up (Immutable)
+- ~~Get marketplace order history (Immutable)~~
+- [ ] CRUD - Restaurant Partner
+- [x] CRU - Employee
+- [x] Promote employee to driver (Use Edit method)
+- [ ] Watch driver location in order by point of time (In real-time)
+- ~~Add Internal products and declare IC Point (CRUD Product)~~
 
 ## System
 
-- Send notification [Skeleton Message ✅]
-- Generate Invoice [Skeleton Message ✅]
-- Assign internal buying to Deliver **[only Shipment purpose]**
+- [x] Send notification [Skeleton Message]
+- [x] Generate Invoice [Skeleton Message]
+- ~~Assign internal buying to Deliver **[only Shipment purpose]**~~
