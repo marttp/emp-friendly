@@ -1,0 +1,14 @@
+package dev.tpcoder.empfriendly.employee.utility;
+
+public enum Tag {
+  SOFTWARE_ENGINEER,
+  FRONTEND_DEVELOPER,
+  BACKEND_DEVELOPER,
+  DESIGNER,
+  INFRASTRUCTURE,
+  DEVOPS,
+  CLOUD_ENGINEER,
+  PROJECT_MANAGER,
+  BUSINESS_ANALYST,
+  DRIVER
+}
