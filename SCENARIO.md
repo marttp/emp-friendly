@@ -15,7 +15,7 @@ EmpFriendly concept - do something that can improve employee life and give oppor
 
 ## Employee
 
-- Get own transaction history
+- Get own transaction history ✅
 - Pay IC Point to restaurant partner
 - Pay IC Point to internal shop
 - Use Journey
@@ -33,18 +33,18 @@ EmpFriendly concept - do something that can improve employee life and give oppor
 
 - CRUD Menu
 - Generate QR Code to IC Point Payment
-- Withdraw IC Point to Cash (can extend to transfer method)
+- Withdraw IC Point to Cash (can extend to transfer method) ✅ [with only deduct endpoint]
 
 ## Admin/Officer
 
-- Topup IC Point
-- Get history of personal top-up (Immutable)
+- Topup IC Point ✅
+- Get history of personal top-up (Immutable) ✅
 - Get marketplace order history (Immutable)
 - CRUD - Restaurant Partner
 - CRU - Employee ✅
-- Promote employee to driver
+- Promote employee to driver (Use Edit method) ✅
 - Watch driver location in order by point of time (In real-time)
-- Add Internal products and declare IC Point
+- Add Internal products and declare IC Point (CRUD Product)
 
 ## System
 
