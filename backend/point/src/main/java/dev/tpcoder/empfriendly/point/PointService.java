@@ -11,6 +11,9 @@ import dev.tpcoder.empfriendly.point.model.dto.TopupRequest;
 import dev.tpcoder.empfriendly.point.repository.PointChangeHistoryRepository;
 import dev.tpcoder.empfriendly.point.repository.PointRepository;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -72,6 +75,10 @@ public class PointService {
     point.setCurrent(balance);
     pointChangeHistoryRepository.save(log);
     pointRepository.save(point);
+  }
+
+  public List<PointChangeHistory> getListTransaction(String refId) {
+    return pointChangeHistoryRepository.findByReferenceIdOrderByCreatedDateDesc(refId);
   }
 
   private PointChangeHistory createHistory(String refId, BigDecimal point,

@@ -1,10 +1,14 @@
 package dev.tpcoder.empfriendly.point;
 
+import dev.tpcoder.empfriendly.point.model.PointChangeHistory;
 import dev.tpcoder.empfriendly.point.model.dto.DeductRequest;
 import dev.tpcoder.empfriendly.point.model.dto.TopupRequest;
+import java.util.List;
 import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,5 +31,10 @@ public class PointController {
   public ResponseEntity<?> deduct(@RequestBody @Valid DeductRequest body) {
     pointService.deductPoint(body);
     return ResponseEntity.noContent().build();
+  }
+
+  @GetMapping("/history/{refId}")
+  public List<PointChangeHistory> getTransactionList(@PathVariable String refId) {
+    return pointService.getListTransaction(refId);
   }
 }
