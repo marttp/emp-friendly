@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emp-friendly-shipment
+  namespace: emp-friendly
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emp-friendly-shipment
+  template:
+    metadata:
+      labels:
+        app: emp-friendly-shipment
+    spec:
+      containers:
+        - name: emp-friendly-shipment
+          image: marttp/emp-friendly-shipment
+          resources:
+            requests:
+              cpu: 300m
+              memory: 512Mi
+            limits:
+              cpu: 300m
+              memory: 512Mi
+          ports:
+            - containerPort: 8080
+              name: shipment
+              protocol: TCP
+          env:
+            - name: SHIPMENT_TOPIC_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: SHIPMENT_TOPIC_NAME
+            - name: REDIS_OM_URL
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secrect
+                  key: REDIS_OM_URL
