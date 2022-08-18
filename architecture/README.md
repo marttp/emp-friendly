@@ -29,18 +29,19 @@
 ### Internal layer
 
 This layer will interact directly with Redis Cloud
+#### **[NOTICE] I can't use $ for EntitySteam with no reasons (Autowired, Constructor Injection) so I changeed plan to use only repository**
 
 - **Employee** - Spring WebFlux (Java) [Repository]
 
-- **Product** - Spring WebFlux (Kotlin) [EntityStream]
+- **Product** - Spring WebFlux (Kotlin) ~~[EntityStream]~~ [Repository]
 
-- **Location** - Spring WebFlux (Java) [EntityStream]
+- **Location** - Spring WebFlux (Java) ~~[EntityStream]~~ [Repository]
 
 - **Order** - Spring Boot (Kotlin) [Repository]
 
 - **Payment** - Spring Boot (Kotlin) [Repository]
 
-- **Shipment** - Spring Boot (Java) [EntityStream]
+- **Shipment** - Spring Boot (Java) **(Skeleton)**
 
 - **Point** - Spring Boot (Java) [Repository]
 
@@ -48,11 +49,11 @@ This layer will interact directly with Redis Cloud
 
 - **Restaurant Management** - FastAPI
 
-- **Notification** - Sanic
+- **Notification** - Sanic **(Skeleton)**
 
 - **QR Code** - FastAPI
 
-- **Invoice** - FastAPI
+- **Invoice** - FastAPI **(Skeleton)**
 
 ## Service communication methodology
 
