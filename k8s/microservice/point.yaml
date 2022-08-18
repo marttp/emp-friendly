@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emp-friendly-point
+  namespace: emp-friendly
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emp-friendly-point
+  template:
+    metadata:
+      labels:
+        app: emp-friendly-point
+    spec:
+      containers:
+        - name: emp-friendly-point
+          image: marttp/emp-friendly-point
+          resources:
+            requests:
+              cpu: 300m
+              memory: 512Mi
+            limits:
+              cpu: 300m
+              memory: 512Mi
+          ports:
+            - containerPort: 8080
+              name: point
+              protocol: TCP
+          env:
+            - name: REDIS_OM_URL
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secrect
+                  key: REDIS_OM_URL
