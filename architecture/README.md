@@ -35,7 +35,7 @@ This layer will interact directly with Redis Cloud
 
 - ~~**Product** - Spring WebFlux (Kotlin) ~~[EntityStream]~~ [Repository]~~
 
-- [ ] **Location** - Spring WebFlux (Java) ~~[EntityStream]~~ [Repository]
+- [x] **Location** - Spring WebFlux (Java) ~~[EntityStream]~~ [Repository]
 
 - [ ] **Order** - Spring Boot (Kotlin) [Repository]
 

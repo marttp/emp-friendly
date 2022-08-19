@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emp-friendly-location
+  namespace: emp-friendly
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emp-friendly-location
+  template:
+    metadata:
+      labels:
+        app: emp-friendly-location
+    spec:
+      containers:
+        - name: emp-friendly-location
+          image: marttp/emp-friendly-location
+          resources:
+            requests:
+              cpu: 300m
+              memory: 512Mi
+            limits:
+              cpu: 300m
+              memory: 512Mi
+          ports:
+            - containerPort: 8080
+              name: location
+              protocol: TCP
+          env:
+            - name: LOCATION_STREAM_EVENT_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: LOCATION_STREAM_EVENT_NAME
+            - name: START_DRIVE_TOPIC_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: START_DRIVE_TOPIC_NAME
+            - name: REDIS_OM_URL
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secrect
+                  key: REDIS_OM_URL

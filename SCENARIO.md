@@ -19,7 +19,8 @@ EmpFriendly concept - do something that can improve employee life and give oppor
 - [ ] Pay IC Point to restaurant partner
 - ~~Pay IC Point to internal shop~~
 - [ ] Use Journey
-- [ ] **[Journey]** Watch driver location in order by point of time (In real-time)
+- ~~**[Journey]** Watch driver location in order by point of time (In real-time with SSE)~~ (currently support only jedis (sync)))
+- [x] **[Journey]** Watch driver history by referenceId
 - [ ] Use Deliver
 - [ ] Use Yummy [Send rating / Get rating]
 - ~~Use IC Buy~~
@@ -27,7 +28,7 @@ EmpFriendly concept - do something that can improve employee life and give oppor
 ## Driver
 
 - [ ] Take the transport request **[Journey]**
-- ~~Take the delivery request **[Deliver]**~~
+- [ ] Take the delivery request **[Deliver]**
 
 ## Restaurant Partner
 
@@ -43,7 +44,8 @@ EmpFriendly concept - do something that can improve employee life and give oppor
 - [ ] CRUD - Restaurant Partner
 - [x] CRU - Employee
 - [x] Promote employee to driver (Use Edit method)
-- [ ] Watch driver location in order by point of time (In real-time)
+- ~~Watch driver location in order by point of time (In real-time with SSE)~~ (currently support only jedis (sync))
+- [x] **[Journey]** Watch driver history by referenceId
 - ~~Add Internal products and declare IC Point (CRUD Product)~~
 
 ## System

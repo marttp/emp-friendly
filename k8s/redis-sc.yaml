@@ -5,8 +5,4 @@ metadata:
   namespace: emp-friendly
 type: Opaque
 data:
-  REDIS_HOST: <YOUR_REDIS_HOST in base64>
-  REDIS_PORT: <YOUR_REDIS_PORT in base64>
-  REDIS_USERNAME: <YOUR_REDIS_USERNAME in base64>
-  REDIS_PASSWORD: <YOUR_REDIS_PASSWORD in base64>
   REDIS_OM_URL: <YOUR_REDIS_URL in base64>

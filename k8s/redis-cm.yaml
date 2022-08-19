@@ -8,3 +8,5 @@ data:
   INVOICE_CREATE_TOPIC_NAME: 'invoice-create-topic'
   NOTIFICATION_SENT_TOPIC_NAME: 'notification-sent-topic'
   SHIPMENT_TOPIC_NAME: 'shipment-topic'
+  LOCATION_STREAM_EVENT_NAME: 'location-stream-event'
+  START_DRIVE_TOPIC_NAME: 'start-drive-topic'
