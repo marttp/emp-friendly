@@ -44,6 +44,8 @@ Refer to [this example](https://github.com/redis-developer/basic-analytics-dashb
 ### Local installation
 
 [Insert instructions for local installation]
+### COMMAND
+XGROUP CREATE location-stream-event location-stream-event $ MKSTREAM
 
 ## Deployment
 
