@@ -33,7 +33,7 @@ public class StartDriveSubscriber implements MessageListener {
       throw new RuntimeException(e);
     }
     // TODO: THIS IS JUST A WORKAROUND TO SIMULATE STREAM LOCATION
-    Flux.interval(Duration.ofSeconds(3)).take(10)
+    Flux.interval(Duration.ofSeconds(2)).take(20)
         .map(aLong -> supportService.publishLocation(tracking.getId(), tracking.getDriverId()))
         .subscribe();
   }
