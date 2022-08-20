@@ -47,7 +47,7 @@ This layer will interact directly with Redis Cloud
 
 - [x] **Rating** - Sanic
 
-- [ ] **Restaurant Management** - FastAPI
+- [x] **Restaurant Management** - FastAPI
 
 - [x] **Notification** - Sanic **(Skeleton)**
 
