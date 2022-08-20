@@ -1,19 +1,20 @@
 from sanic import Sanic
 from sanic.response import text
-from aredis_om import Migrator, get_redis_connection
+from aredis_om import get_redis_connection
+from redis_om import Migrator
 from sanic.log import logger
 from config import notification_sent_topic
 from redis.client import PubSub
 import asyncio
 
 app = Sanic("NotificationMicroservice")
+Migrator().run()
 
 
 @app.before_server_start
 async def setup_db(app: Sanic):
     logger.debug('Starting Sanic')
     app.ctx.redis = get_redis_connection()
-    await Migrator().run()
 
 
 @app.after_server_start
