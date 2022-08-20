@@ -41,7 +41,7 @@ EmpFriendly concept - do something that can improve employee life and give oppor
 - [x] Topup IC Point
 - [x] Get history of personal top-up (Immutable)
 - ~~Get marketplace order history (Immutable)~~
-- [ ] CRUD - Restaurant Partner
+- [x] CRD - Restaurant Partner
 - [x] CRU - Employee
 - [x] Promote employee to driver (Use Edit method)
 - ~~Watch driver location in order by point of time (In real-time with SSE)~~ (currently support only jedis (sync))
