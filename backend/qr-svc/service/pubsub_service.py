@@ -9,7 +9,7 @@ from service.qr_code_service import update_qr_status, create_qr_code, create_res
 
 
 async def handle_message(message: dict):
-    logger.debug(f'Payment subscribed message: {message}')
+    logger.debug(f'Subscribed message: {message}')
     data = message['data']
     data = json.loads(data)
     channel = message['channel'].decode()
@@ -22,7 +22,6 @@ async def handle_message(message: dict):
         logger.debug('Payment Error!')
         # update_qr_status(qr_id, config.STATUS.get('error'))
     elif channel == create_new_restaurant_topic:
-        logger.debug("Create new QR for restaurant")
         create_restaurant_qr_code(data)
 
 

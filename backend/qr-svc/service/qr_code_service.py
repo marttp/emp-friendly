@@ -3,6 +3,7 @@ from datetime import datetime
 import config
 from models import QRCode, RestaurantQRCode
 from redis_om.model import NotFoundError
+from sanic.log import logger
 
 
 # Get
@@ -32,10 +33,14 @@ def create_qr_code(data: dict):
 
 
 def create_restaurant_qr_code(data: dict):
-    data['status'] = config.STATUS.get('active')
-    res_qr_model = RestaurantQRCode(**data)
-    res_qr_model.save()
-    return res_qr_model
+    logger.info(f'{data}')
+    qr_code_list = RestaurantQRCode.find(RestaurantQRCode.restaurant_id == data['restaurant_id']).all()
+    if len(qr_code_list) == 0:
+        logger.info("Create new QR for restaurant")
+        data['status'] = config.STATUS.get('active')
+        res_qr_model = RestaurantQRCode(**data)
+        res_qr_model.save()
+        logger.info(f'qr: {res_qr_model}')
 
 
 # Update

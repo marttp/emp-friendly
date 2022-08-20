@@ -1,30 +1,34 @@
 from sanic import Sanic, Request, HTTPResponse, response
-from aredis_om import Migrator, get_redis_connection
+from aredis_om import get_redis_connection
+from redis_om import Migrator
 from sanic.log import logger
 
 import config
-from config import payment_error_topic, payment_completed_topic
+from config import payment_error_topic, payment_completed_topic, create_new_restaurant_topic
 import asyncio
 from service.pubsub_service import subscribe_topic
 from service import qr_code_service, gen_qr_service
 
 app = Sanic("QRCodeMicroservice")
+Migrator().run()
 
 
 @app.before_server_start
 async def setup_db(app: Sanic):
     logger.debug('Starting Sanic')
     app.ctx.redis = get_redis_connection()
-    await Migrator().run()
 
 
 @app.after_server_start
 async def initial_after(app: Sanic):
     pubsub = app.ctx.redis.pubsub()
-    for topic in [payment_completed_topic, payment_error_topic]:
-        await pubsub.subscribe(topic)
-        task = asyncio.create_task(subscribe_topic(pubsub))
-        await app.add_task(task)
+    await pubsub.subscribe(create_new_restaurant_topic)
+    task = asyncio.create_task(subscribe_topic(pubsub))
+    await app.add_task(task)
+    # for topic in [payment_completed_topic, payment_error_topic, create_new_restaurant_topic]:
+    #     await pubsub.subscribe(topic)
+    #     task = asyncio.create_task(subscribe_topic(pubsub))
+    #     await app.add_task(task)
 
 
 @app.get('/<qr_id:str>')
