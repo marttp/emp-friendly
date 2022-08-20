@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emp-friendly-qr-service
+  namespace: emp-friendly
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emp-friendly-qr-service
+  template:
+    metadata:
+      labels:
+        app: emp-friendly-qr-service
+    spec:
+      containers:
+        - name: emp-friendly-qr-service
+          image: marttp/emp-friendly-qr-service
+          resources:
+            requests:
+              cpu: 300m
+              memory: 512Mi
+            limits:
+              cpu: 300m
+              memory: 512Mi
+          ports:
+            - containerPort: 8080
+              name: qr-service
+              protocol: TCP
+          env:
+            - name: PAYMENT_COMPLETED_TOPIC_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: PAYMENT_COMPLETED_TOPIC_NAME
+            - name: PAYMENT_ERROR_TOPIC_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: PAYMENT_ERROR_TOPIC_NAME
+            - name: CREATE_NEW_RESTAURANT_TOPIC_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: CREATE_NEW_RESTAURANT_TOPIC_NAME
+            - name: PAYMENT_URL_FOR_QR
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: PAYMENT_URL_FOR_QR
+            - name: PAYMENT_RESTAURANT_URL_FOR_QR
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: PAYMENT_RESTAURANT_URL_FOR_QR
+            - name: REDIS_OM_URL
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secrect
+                  key: REDIS_OM_URL

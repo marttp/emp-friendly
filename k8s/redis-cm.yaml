@@ -4,9 +4,16 @@ metadata:
   name: emp-friendly-cm
   namespace: emp-friendly
 data:
+  # Topic
   RECEIVED_RATING_TOPIC_NAME: 'received-rating-topic'
   INVOICE_CREATE_TOPIC_NAME: 'invoice-create-topic'
   NOTIFICATION_SENT_TOPIC_NAME: 'notification-sent-topic'
   SHIPMENT_TOPIC_NAME: 'shipment-topic'
   LOCATION_STREAM_EVENT_NAME: 'location-stream-event'
   START_DRIVE_TOPIC_NAME: 'start-drive-topic'
+  PAYMENT_COMPLETED_TOPIC_NAME: 'payment-completed-topic'
+  PAYMENT_ERROR_TOPIC_NAME: 'payment-error-topic'
+  CREATE_NEW_RESTAURANT_TOPIC_NAME: 'create-new-restaurant-topic'
+  # Other
+  PAYMENT_URL_FOR_QR: '/payments/{id}'
+  PAYMENT_RESTAURANT_URL_FOR_QR: '/payments/restaurants/{id}'

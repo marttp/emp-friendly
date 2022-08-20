@@ -32,8 +32,8 @@ EmpFriendly concept - do something that can improve employee life and give oppor
 
 ## Restaurant Partner
 
-- [ ] CRUD Menu
-- [ ] Generate QR Code to IC Point Payment
+- ~~[ ] CRUD Menu~~
+- [x] Generate QR Code to IC Point Payment
 - [x] Withdraw IC Point to Cash (can extend to transfer method) [with only deduct endpoint]
 
 ## Admin/Officer

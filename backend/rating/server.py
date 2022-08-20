@@ -1,5 +1,6 @@
 from sanic import Sanic
-from aredis_om import Migrator, get_redis_connection
+from aredis_om import get_redis_connection
+from redis_om import Migrator
 from sanic.log import logger
 from config import received_rating_topic
 import asyncio
@@ -7,6 +8,7 @@ from pubsub_service import subscribe_topic
 from blueprint import bp
 
 application = Sanic('RatingMicroservice')
+Migrator().run()
 
 
 @application.before_server_start
