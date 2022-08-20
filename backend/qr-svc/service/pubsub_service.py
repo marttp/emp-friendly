@@ -4,8 +4,8 @@ from sanic.log import logger
 from redis.client import PubSub
 
 import config
-from config import payment_error_topic, payment_completed_topic
-from service.qr_code_service import update_qr_status
+from config import payment_error_topic, payment_completed_topic, create_new_restaurant_topic
+from service.qr_code_service import update_qr_status, create_qr_code, create_restaurant_qr_code
 
 
 async def handle_message(message: dict):
@@ -13,13 +13,17 @@ async def handle_message(message: dict):
     data = message['data']
     data = json.loads(data)
     channel = message['channel'].decode()
-    qr_id = data['qr_id']
     if channel == payment_completed_topic:
+        qr_id = data['qr_id']
         logger.debug('Payment Success!')
-        update_qr_status(qr_id, config.STATUS.get('success'))
+        # update_qr_status(qr_id, config.STATUS.get('success'))
     elif channel == payment_error_topic:
+        qr_id = data['qr_id']
         logger.debug('Payment Error!')
-        update_qr_status(qr_id, config.STATUS.get('error'))
+        # update_qr_status(qr_id, config.STATUS.get('error'))
+    elif channel == create_new_restaurant_topic:
+        logger.debug("Create new QR for restaurant")
+        create_restaurant_qr_code(data)
 
 
 async def subscribe_topic(pubsub: PubSub):

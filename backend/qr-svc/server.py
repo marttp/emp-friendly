@@ -32,7 +32,13 @@ async def get_qr_code(request: Request, qr_id: str) -> HTTPResponse:
     result = qr_code_service.get_qr_code(qr_id)
     if result.status != config.STATUS.get('processing'):
         raise ValueError("Status not processing")
-    return response.json({'base64': gen_qr_service.gen_qr(result.payment_id)})
+    return response.json({'base64': gen_qr_service.gen_qr_payment(result.payment_id)})
+
+
+@app.get('/restaurants/<restaurant_id:str>')
+async def get_qr_code(request: Request, restaurant_id: str) -> HTTPResponse:
+    result = qr_code_service.get_restaurant_qr_code(restaurant_id)
+    return response.json({'base64': gen_qr_service.gen_qr_for_restaurant(result.restaurant_id)})
 
 
 @app.post('/')

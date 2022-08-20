@@ -2,11 +2,17 @@ import qrcode
 import base64
 from PIL import Image
 from io import BytesIO
-from config import payment_url
+from config import payment_url, payment_restaurant_url
 
 
-def gen_qr(payment_id: str) -> str:
+def gen_qr_payment(payment_id: str) -> str:
     input_data = payment_url.replace('{id}', payment_id)
+    data = gen_plain_qr_code(input_data)
+    return data.decode(encoding="utf-8")
+
+
+def gen_qr_for_restaurant(restaurant_id: str) -> str:
+    input_data = payment_restaurant_url.replace('{id}', restaurant_id)
     data = gen_plain_qr_code(input_data)
     return data.decode(encoding="utf-8")
 
