@@ -51,7 +51,7 @@ This layer will interact directly with Redis Cloud
 
 - [x] **Notification** - Sanic **(Skeleton)**
 
-- [ ] **QR Code** - FastAPI
+- [x] **QR Code** - Sanic
 
 - [x] **Invoice** - FastAPI **(Skeleton)**
 
