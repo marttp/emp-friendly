@@ -13,5 +13,7 @@ data:
   START_DRIVE_TOPIC_NAME: 'start-drive-topic'
   PAYMENT_COMPLETED_TOPIC_NAME: 'payment-completed-topic'
   PAYMENT_ERROR_TOPIC_NAME: 'payment-error-topic'
+  CREATE_NEW_RESTAURANT_TOPIC_NAME: 'create-new-restaurant-topic'
   # Other
   PAYMENT_URL_FOR_QR: '/payments/{id}'
+  PAYMENT_RESTAURANT_URL_FOR_QR: '/payments/restaurants/{id}'
