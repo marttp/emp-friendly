@@ -2,9 +2,13 @@
 
 EmpFriendly [Redis Hackathon on DEV 2022] - Support you employees and strive to be better
 
+This project will show the overview of microservices architecture that design base on Cloud-Native approach (actually, some parts still missing because need to compete with the times), In this regards, I design to show how we can implement it from scratch including RESTful/GraphQL API, Aggregation Pattern, Asynchronous messaging with Pub/Sub and Streams.
+
+[TODO] 
+
 [Insert app screenshots](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#uploading-assets)
 
-# Overview video
+# [TODO] Overview video
 
 Here's a short video that explains the project and how it uses Redis:
 
@@ -12,7 +16,7 @@ Here's a short video that explains the project and how it uses Redis:
 
 [![Embed your YouTube video](https://i.ytimg.com/vi/vyxdC1qK4NE/maxresdefault.jpg)](https://www.youtube.com/watch?v=vyxdC1qK4NE)
 
-## How it works
+## [TODO] How it works
 
 ### How Architecture look like?
 
@@ -20,16 +24,82 @@ Here's a short video that explains the project and how it uses Redis:
 
 [More Informations](https://github.com/marttp/emp-friendly/tree/main/architecture) are inside the architecture directory
 
-### How the data is stored:
+### [TODO] How the data is stored:
 
 Use Redis OM Spring and Redis OM Python as base libraries to work on
 Below is JSON format of each document related
 
-### How the data is accessed:
+#### Point
+
+```json
+{
+  "referenceId":"d37b2d0b-c06d-429c-b56d-7465c3959993",
+  "current": 500100,
+  "type": "INDIVIDUAL"
+}
+```
+
+#### Payment
+
+```json
+{
+  "id": "01GAZDMREPWATKPJTB2N4M1CZ7",
+  "from": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+  "to": "c820da4c-d8de-4229-848b-33e5f183a22c",
+  "point": 120.0,
+  "method": "QR_CODE_SCAN",
+  "type": "INDIVIDUAL_DEBIT",
+  "createdDate": 1661059359334
+}
+```
+
+#### PointChangeHistory
+
+```json
+{
+  "id": "01GAZDMSPKNQ9G3TQ298SM3D22",
+  "referenceId": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+  "point": -120.0,
+  "balancePoint": 500220.0,
+  "createdDate": 1661059360527
+}
+```
+==== SAME TRANSACTION ====
+```json
+{
+  "id": "01GAZDMSQ1QW6QVX8CRH8FJ4B0",
+  "referenceId": "c820da4c-d8de-4229-848b-33e5f183a22c",
+  "point": 120.0,
+  "balancePoint": 220.0,
+  "createdDate": 1661059360580
+}
+```
+
+### [TODO] How the data is accessed:
 
 Use Redis OM Spring and Redis OM Python as base libraries to work on
 
 ## How to run it locally?
+
+### Prerequisites
+
+Including development and deployments
+
+- Java 17 [Option1 - sdkman](https://sdkman.io/jdks) | [Option2 - Microsoft-OpenJDK](https://docs.microsoft.com/th-th/java/openjdk/download)
+- [Python 3.10.4](https://www.python.org/downloads/)
+- [Docker](https://www.docker.com/products/docker-desktop/)
+- Kubernetes Cluster [Option1 - Kind](https://kind.sigs.k8s.io/) | [Option2 - minikube](https://minikube.sigs.k8s.io/docs/start/)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/)
+- [Redis Cloud](https://redis.info/try-free-dev-to)
+- [Postman](https://www.postman.com/)
+
+### Local installation
+
+For deployment purpose only
+
+1. Install Kubernetes Cluster of choices
+2. Create Database in [Redis Cloud](https://redis.info/try-free-dev-to)
+3. Follow "How to run it locally?" instructions
 
 ### Transform Redis Cloud URL to base64
 
@@ -61,23 +131,11 @@ XGROUP CREATE location-stream-event location-stream-event $ MKSTREAM
 kubectl apply -f ./k8s
 ```
 
-### Calling the API with Postman
+### [TODO] Calling the API with Postman
+
 Import Postman Collection: "" to your postman (or use cURL)
 
 Including Aggregator Collection - General, Driver, Management related
-
-### Prerequisites
-
-- Java 17 [Option1 - sdkman](https://sdkman.io/jdks) | [Option2 - Microsoft-OpenJDK](https://docs.microsoft.com/th-th/java/openjdk/download)
-- [Python 3.10.4](https://www.python.org/downloads/)
-- [Docker](https://www.docker.com/products/docker-desktop/)
-- Kubernetes Cluster [Option1 - Kind](https://kind.sigs.k8s.io/) | [Option2 - minikube](https://minikube.sigs.k8s.io/docs/start/)
-- [kubectl](https://kubernetes.io/docs/tasks/tools/)
-- [Redis Cloud](https://redis.info/try-free-dev-to)
-
-### Local installation
-
-[Insert instructions for local installation]
 
 ## Deployment
 
