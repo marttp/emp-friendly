@@ -29,6 +29,52 @@ Here's a short video that explains the project and how it uses Redis:
 Use Redis OM Spring and Redis OM Python as base libraries to work on
 Below is JSON format of each document related
 
+#### Point
+
+```json
+{
+  "referenceId":"d37b2d0b-c06d-429c-b56d-7465c3959993",
+  "current": 500100,
+  "type": "INDIVIDUAL"
+}
+```
+
+#### Payment
+
+```json
+{
+  "id": "01GAZDMREPWATKPJTB2N4M1CZ7",
+  "from": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+  "to": "c820da4c-d8de-4229-848b-33e5f183a22c",
+  "point": 120.0,
+  "method": "QR_CODE_SCAN",
+  "type": "INDIVIDUAL_DEBIT",
+  "createdDate": 1661059359334
+}
+```
+
+#### PointChangeHistory
+
+```json
+{
+  "id": "01GAZDMSPKNQ9G3TQ298SM3D22",
+  "referenceId": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+  "point": -120.0,
+  "balancePoint": 500220.0,
+  "createdDate": 1661059360527
+}
+```
+==== SAME TRANSACTION ====
+```json
+{
+  "id": "01GAZDMSQ1QW6QVX8CRH8FJ4B0",
+  "referenceId": "c820da4c-d8de-4229-848b-33e5f183a22c",
+  "point": 120.0,
+  "balancePoint": 220.0,
+  "createdDate": 1661059360580
+}
+```
+
 ### [TODO] How the data is accessed:
 
 Use Redis OM Spring and Redis OM Python as base libraries to work on
