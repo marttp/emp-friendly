@@ -5,7 +5,7 @@
 - Spring Boot/WebFlux [Java/Kotlin] + Redis OM Spring
 - Sanic, FastAPI [Python] + Redis OM Python
 - Redis Stack (Cloud)
-- Kubernetes (Deployment/Service/Ingress/Secret)
+- Kubernetes (Deployment/Service/Secret/ConfigMap)
 
 ## Architecture
 
