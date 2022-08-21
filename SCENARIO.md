@@ -16,7 +16,7 @@ EmpFriendly concept - do something that can improve employee life and give oppor
 ## Employee
 
 - [x] Get own transaction history
-- [ ] Pay IC Point to restaurant partner
+- [x] Pay IC Point to restaurant partner
 - ~~Pay IC Point to internal shop~~
 - [ ] Use Journey
 - ~~**[Journey]** Watch driver location in order by point of time (In real-time with SSE)~~ (currently support only jedis (sync)))
