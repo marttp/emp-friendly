@@ -28,6 +28,38 @@ Here's a short video that explains the project and how it uses Redis:
 
 Use Redis OM Spring and Redis OM Python as base libraries to work on
 Below is JSON format of each document related
+#### Employee
+
+```json
+{
+  "id": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+  "firstName": "Thanaphoom",
+  "lastName": "Babparn",
+  "age": 25,
+  "email": "thanaphoom.babparn@empfriendly.dev",
+  "addressLoc": "100.7433723,14.0364895",
+  "address": {
+    "houseNumber": "109/1070",
+    "city": "Thanyaburi",
+    "state": "Pathum Thani",
+    "postalCode": "12110",
+    "country": "Thailand"
+  },
+  "tags": [
+    "SOFTWARE_ENGINEER",
+    "DEVOPS",
+    "CLOUD_ENGINEER",
+    "BACKEND_DEVELOPER"
+  ],
+  "type": "ORDINARY",
+  "createdDate": 1660784666190
+}
+```
+
+#### [TODO] Location
+
+```json
+```
 
 #### Point
 
@@ -64,7 +96,9 @@ Below is JSON format of each document related
   "createdDate": 1661059360527
 }
 ```
+
 ==== SAME TRANSACTION ====
+
 ```json
 {
   "id": "01GAZDMSQ1QW6QVX8CRH8FJ4B0",
@@ -75,9 +109,84 @@ Below is JSON format of each document related
 }
 ```
 
-### [TODO] How the data is accessed:
+#### [TODO] RatingHistory
+
+```json
+```
+
+#### Restaurant
+
+```json
+{
+  "pk": "01GAZ0HSPWKWA60J6CMQ11892G",
+  "restaurant_id": "a3cbc4f1-3636-4db9-bb42-36c49ba655b9",
+  "name": "SHOP-1"
+}
+```
+
+#### Restaurant QR Code
+
+```json
+{
+  "pk": "01GAZG9PHX6Q119B8EDXFQRJK5",
+  "restaurant_id": "d31710fc-ba84-4ef9-ae2e-3c8e38e1c84c",
+  "status": "active"
+}
+```
+
+### How the data is accessed:
 
 Use Redis OM Spring and Redis OM Python as base libraries to work on
+
+#### Python Example - QR service
+
+Use JsonModel to perform operation
+
+```python
+import datetime
+
+from redis_om import (Field, JsonModel)
+
+class QRCode(JsonModel):
+    payment_id: str = Field(index=True)
+    status: str = Field(index=True)
+    created_date: datetime.datetime
+
+class RestaurantQRCode(JsonModel):
+    restaurant_id: str = Field(index=True)
+    status: str = Field(index=True)
+```
+
+#### Java/Kotlin Example - EmployeeRepository
+
+```java
+package dev.tpcoder.empfriendly.employee.repository;
+
+import com.redis.om.spring.repository.RedisDocumentRepository;
+import dev.tpcoder.empfriendly.employee.model.Employee;
+import java.util.Set;
+import org.springframework.data.geo.Distance;
+import org.springframework.data.geo.Point;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface EmployeeRepository extends RedisDocumentRepository<Employee, String> {
+
+  Iterable<Employee> findByAddressLocNear(Point point, Distance distance);
+
+  Iterable<Employee> findByFirstNameAndLastName(String firstName, String lastName);
+
+  Iterable<Employee> findByAddress_City(String city);
+
+  Iterable<Employee> findByTags(Set<String> skills);
+
+  Iterable<Employee> findByTagsContainingAll(Set<String> skills);
+
+  Iterable<Employee> findByType(String employeeType);
+
+  Iterable<Employee> search(String text);
+}
+```
 
 ## How to run it locally?
 
@@ -131,9 +240,11 @@ XGROUP CREATE location-stream-event location-stream-event $ MKSTREAM
 kubectl apply -f ./k8s
 ```
 
-### [TODO] Calling the API with Postman
+### [TODO] Port Forward Service (Required 3 Terminals)
 
-Import Postman Collection: "" to your postman (or use cURL)
+### Calling the API with Postman
+
+Import Postman Collection: **RedisHackathonDev2022.postman_collection.json** to your postman (or use cURL)
 
 Including Aggregator Collection - General, Driver, Management related
 
