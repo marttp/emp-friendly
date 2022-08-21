@@ -4,11 +4,13 @@ EmpFriendly [Redis Hackathon on DEV 2022] - Support you employees and strive to 
 
 This project will show the overview of microservices architecture that design base on Cloud-Native approach (actually, some parts still missing because need to compete with the times), In this regards, I design to show how we can implement it from scratch including RESTful/GraphQL API, Aggregation Pattern, Asynchronous messaging with Pub/Sub and Streams.
 
-![Location Streaming](screenshots/location-streams.png)
-
 ![Postman Example](screenshots/postman-example.png)
 
 ![Kubernetes component including pods, deployments, and services](screenshots/pod-svc.png)
+
+![Location Streaming](screenshots/location-streams.png)
+
+![Streaming display from redisinsights](screenshots/streaming-topic-redisinsights.png)
 
 # [TODO] Overview video
 
