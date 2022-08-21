@@ -7,11 +7,11 @@
 - Redis Stack (Cloud)
 - Kubernetes (Deployment/Service/Secret/ConfigMap)
 
-## [TODO] Architecture
+## Architecture
 
 ![Architecture](Technical%20High-Level%20Architecture.drawio.png)
 
-- Ingress to reverse proxy to aggregator level [REMOVE_FOR_NOW]
+- [DISABLE FOR NOW] Ingress to reverse proxy to aggregator level [REMOVE_FOR_NOW]
 - Aggregator level - General (ordinary), Driver (for driver role), Management (for admin management)
 - Internal service will communicate via Kubernetes namespace svc url
 - Secret will store only Redis connection related
@@ -29,6 +29,7 @@
 ### Internal layer
 
 This layer will interact directly with Redis Cloud
+
 #### **[NOTICE] I can't use $ for EntitySteam with no reasons (Autowired, Constructor Injection) so I changeed plan to use only repository**
 
 - [x] **Employee** - Spring WebFlux (Java) [Repository] :50203
@@ -37,9 +38,9 @@ This layer will interact directly with Redis Cloud
 
 - [x] **Location** - Spring WebFlux (Java) ~~[EntityStream]~~ [Repository] :50204
 
-- [ ] **Order** - Spring Boot (Kotlin) [Repository] :50206
+- [x] **Order** - Spring Boot (Kotlin) [Repository] :50206
 
-- [ ] **Payment** - Spring Boot (Kotlin) [Repository] :50207
+- [x] **Payment** - Spring Boot (Kotlin) [Repository] :50207
 
 - [x] **Shipment** - Spring Boot (Java) **(Skeleton)**
 

@@ -4,9 +4,9 @@ EmpFriendly [Redis Hackathon on DEV 2022] - Support you employees and strive to 
 
 This project will show the overview of microservices architecture that design base on Cloud-Native approach (actually, some parts still missing because need to compete with the times), In this regards, I design to show how we can implement it from scratch including RESTful/GraphQL API, Aggregation Pattern, Asynchronous messaging with Pub/Sub and Streams.
 
-[TODO] 
+![Location Streaming](screenshots/location-streams.png)
 
-[Insert app screenshots](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#uploading-assets)
+![Postman Example](screenshots/postman-example.png)
 
 # [TODO] Overview video
 
@@ -24,10 +24,11 @@ Here's a short video that explains the project and how it uses Redis:
 
 [More Informations](https://github.com/marttp/emp-friendly/tree/main/architecture) are inside the architecture directory
 
-### [TODO] How the data is stored:
+### How the data is stored:
 
 Use Redis OM Spring and Redis OM Python as base libraries to work on
 Below is JSON format of each document related
+
 #### Employee
 
 ```json
@@ -56,9 +57,72 @@ Below is JSON format of each document related
 }
 ```
 
-#### [TODO] Location
+#### JourneyOrder
 
 ```json
+{
+  "id": "jrny01GAZY3KGMG8RRACYD81EH4EPK",
+  "status": "WAITING",
+  "requesterId": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+  "driverId": "8985954f-7925-42c9-a1e5-e6b4bad5fd6c",
+  "createdDate": 1661076623113
+}
+```
+
+#### DeliverOrder
+
+```json
+{
+  "id": "jrny01GAZY3KGMG8RRACYD81EH4EPK",
+  "status": "WAITING",
+  "requesterId": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+  "driverId": "8985954f-7925-42c9-a1e5-e6b4bad5fd6c",
+  "createdDate": 1661076623113
+}
+```
+
+#### OrderStatusTracking
+
+```json
+{
+  "id": "01GAZY48D16FQ1ZKZJKQRKN4E7",
+  "orderType": "DELIVER",
+  "status": "WAITING",
+  "orderId": "dlv01GAZY4898A4M205Q0QWBVR9YS",
+  "employeeId": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+  "createdDate": 1661076644324
+}
+{
+  "id": "01GAZYVBDWTTBBJBHE2G1A003A",
+  "orderType": "JOURNEY",
+  "orderId": "jrny01GAZYJHHRX0SXT08BDJTYD0KY",
+  "employeeId": "8985954f-7925-42c9-a1e5-e6b4bad5fd6c",
+  "status": "ACCEPTED",
+  "createdDate": "2022-08-21T17:23:21.087"
+}
+```
+
+#### Location
+
+```json
+{
+  "id": "01GAZZWNPFBY97HMNK5KM7G8HH",
+  "referenceId": "dlv01GAZYJKRS640VGQVTBCYEQXD3",
+  "driverId": "8985954f-7925-42c9-a1e5-e6b4bad5fd6c",
+  "timestamp": 1661078492839,
+  "geoPoint": "12.645436856205208,69.10387306037327"
+}
+```
+
+#### Tracking
+
+```json
+{
+  "id": "dlv01GAZYJKRS640VGQVTBCYEQXD3",
+  "requesterId": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+  "driverId": "8985954f-7925-42c9-a1e5-e6b4bad5fd6c",
+  "type": "DELIVER"
+}
 ```
 
 #### Point
@@ -109,9 +173,17 @@ Below is JSON format of each document related
 }
 ```
 
-#### [TODO] RatingHistory
+#### RatingHistory
 
 ```json
+{
+  "pk": "01GAMSGVQ6NKXFKB9FEMRD441S",
+  "user_id": "test_user",
+  "target_id": "test_target",
+  "type": "Restaurant",
+  "rate": 4,
+  "created_date": "2022-08-17T02:17:28.176224"
+}
 ```
 
 #### Restaurant

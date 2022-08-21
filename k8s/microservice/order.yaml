@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emp-friendly-order
+  namespace: emp-friendly
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emp-friendly-order
+  template:
+    metadata:
+      labels:
+        app: emp-friendly-order
+    spec:
+      containers:
+        - name: emp-friendly-order
+          image: marttp/emp-friendly-order
+          resources:
+            requests:
+              cpu: 300m
+              memory: 512Mi
+            limits:
+              cpu: 300m
+              memory: 512Mi
+          ports:
+            - containerPort: 8080
+              name: order
+              protocol: TCP
+          env:
+            - name: LOCATION_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: LOCATION_SERVICE_URL
+            - name: REDIS_OM_URL
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secrect
+                  key: REDIS_OM_URL
