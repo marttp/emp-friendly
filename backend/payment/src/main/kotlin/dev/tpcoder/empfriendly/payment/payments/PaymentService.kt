@@ -20,7 +20,7 @@ class PaymentService(private val paymentRepository: PaymentRepository,
             point = body.point
         )
         val topup = pointWebClient.post()
-            .uri("/topup")
+            .uri("/points/topup")
             .bodyValue(topupBody)
             .retrieve()
             .toBodilessEntity()
@@ -30,7 +30,7 @@ class PaymentService(private val paymentRepository: PaymentRepository,
             point = body.point
         )
         val deduct = pointWebClient.post()
-            .uri("/deduct")
+            .uri("/points/deduct")
             .bodyValue(deductBody)
             .retrieve()
             .toBodilessEntity()
