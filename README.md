@@ -2,9 +2,11 @@
 
 EmpFriendly [Redis Hackathon on DEV 2022] - Support you employees and strive to be better
 
+[TODO] 
+
 [Insert app screenshots](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#uploading-assets)
 
-# Overview video
+# [TODO] Overview video
 
 Here's a short video that explains the project and how it uses Redis:
 
@@ -12,7 +14,7 @@ Here's a short video that explains the project and how it uses Redis:
 
 [![Embed your YouTube video](https://i.ytimg.com/vi/vyxdC1qK4NE/maxresdefault.jpg)](https://www.youtube.com/watch?v=vyxdC1qK4NE)
 
-## How it works
+## [TODO] How it works
 
 ### How Architecture look like?
 
@@ -20,12 +22,12 @@ Here's a short video that explains the project and how it uses Redis:
 
 [More Informations](https://github.com/marttp/emp-friendly/tree/main/architecture) are inside the architecture directory
 
-### How the data is stored:
+### [TODO] How the data is stored:
 
 Use Redis OM Spring and Redis OM Python as base libraries to work on
 Below is JSON format of each document related
 
-### How the data is accessed:
+### [TODO] How the data is accessed:
 
 Use Redis OM Spring and Redis OM Python as base libraries to work on
 
@@ -61,13 +63,14 @@ XGROUP CREATE location-stream-event location-stream-event $ MKSTREAM
 kubectl apply -f ./k8s
 ```
 
-### Calling the API with Postman
+### [TODO] Calling the API with Postman
 Import Postman Collection: "" to your postman (or use cURL)
 
 Including Aggregator Collection - General, Driver, Management related
 
 ### Prerequisites
 
+Including development and deployments
 - Java 17 [Option1 - sdkman](https://sdkman.io/jdks) | [Option2 - Microsoft-OpenJDK](https://docs.microsoft.com/th-th/java/openjdk/download)
 - [Python 3.10.4](https://www.python.org/downloads/)
 - [Docker](https://www.docker.com/products/docker-desktop/)
@@ -77,7 +80,10 @@ Including Aggregator Collection - General, Driver, Management related
 
 ### Local installation
 
-[Insert instructions for local installation]
+For deployment purpose only
+
+1. Install Kubernetes Cluster of choices
+2. Follow "How to run it locally?" instructions
 
 ## Deployment
 
