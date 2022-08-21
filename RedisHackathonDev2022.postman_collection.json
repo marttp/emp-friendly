@@ -1526,6 +1526,377 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Get Active Order by driverId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/orders?id=8985954f-7925-42c9-a1e5-e6b4bad5fd6c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "8985954f-7925-42c9-a1e5-e6b4bad5fd6c"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List of order",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/orders?id=8985954f-7925-42c9-a1e5-e6b4bad5fd6c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "8985954f-7925-42c9-a1e5-e6b4bad5fd6c"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 Aug 2022 10:10:58 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"jrny01GAZY3KGMG8RRACYD81EH4EPK\",\n        \"type\": \"JOURNEY\",\n        \"createdDate\": \"2022-08-21T17:10:23.113\"\n    },\n    {\n        \"id\": \"dlv01GAZY4898A4M205Q0QWBVR9YS\",\n        \"type\": \"DELIVER\",\n        \"createdDate\": \"2022-08-21T17:10:44.185\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create Journey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"requesterId\": \"d37b2d0b-c06d-429c-b56d-7465c3959993\",\n    \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n    \"type\": \"JOURNEY\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"requesterId\": \"d37b2d0b-c06d-429c-b56d-7465c3959993\",\n    \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n    \"type\": \"JOURNEY\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/orders",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 Aug 2022 10:10:23 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Create Deliver",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"requesterId\": \"d37b2d0b-c06d-429c-b56d-7465c3959993\",\n    \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n    \"type\": \"DELIVER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"requesterId\": \"d37b2d0b-c06d-429c-b56d-7465c3959993\",\n    \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n    \"type\": \"DELIVER\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/orders",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 Aug 2022 10:10:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get Order Status Tracking",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/orders/jrny01GAZYJHHRX0SXT08BDJTYD0KY/tracking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"jrny01GAZYJHHRX0SXT08BDJTYD0KY",
+								"tracking"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Order Status Tracking",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/orders/jrny01GAZYJHHRX0SXT08BDJTYD0KY/tracking",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders",
+										"jrny01GAZYJHHRX0SXT08BDJTYD0KY",
+										"tracking"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 Aug 2022 10:24:37 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"01GAZYJHRTP1TC3T9F2E9XCQF7\",\n        \"orderType\": \"JOURNEY\",\n        \"orderId\": \"jrny01GAZYJHHRX0SXT08BDJTYD0KY\",\n        \"employeeId\": \"d37b2d0b-c06d-429c-b56d-7465c3959993\",\n        \"status\": \"WAITING\",\n        \"createdDate\": \"2022-08-21T17:18:32.679\"\n    },\n    {\n        \"id\": \"01GAZYVBDWTTBBJBHE2G1A003A\",\n        \"orderType\": \"JOURNEY\",\n        \"orderId\": \"jrny01GAZYJHHRX0SXT08BDJTYD0KY\",\n        \"employeeId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"status\": \"ACCEPTED\",\n        \"createdDate\": \"2022-08-21T17:23:21.087\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Accept Journey by ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders/journey/jrny01GAZYJHHRX0SXT08BDJTYD0KY/accept",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"journey",
+								"jrny01GAZYJHHRX0SXT08BDJTYD0KY",
+								"accept"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Accept Deliver by ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders/deliver/dlv01GAZYJKRS640VGQVTBCYEQXD3/accept",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"deliver",
+								"dlv01GAZYJKRS640VGQVTBCYEQXD3",
+								"accept"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
