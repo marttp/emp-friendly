@@ -28,6 +28,11 @@ spec:
               name: rest-mgm
               protocol: TCP
           env:
+            - name: CREATE_NEW_RESTAURANT_TOPIC_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: CREATE_NEW_RESTAURANT_TOPIC_NAME
             - name: REDIS_OM_URL
               valueFrom:
                 secretKeyRef:

@@ -1,7 +1,10 @@
+import json
 from typing import List
 from fastapi import APIRouter, HTTPException
+
+import config
 from models import Restaurant, RestaurantModel
-from aredis_om import NotFoundError
+from aredis_om import NotFoundError, get_redis_connection
 import logging
 
 log = logging.getLogger(__name__)
@@ -16,6 +19,11 @@ async def create(payload: RestaurantModel):
         name=payload.name
     )
     restaurant.save()
+    client = get_redis_connection()
+    message_payload = {
+        'restaurant_id': restaurant.restaurant_id
+    }
+    await client.publish(config.create_new_restaurant_topic, json.dumps(message_payload))
     return restaurant
 
 
