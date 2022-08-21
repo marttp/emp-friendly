@@ -22,15 +22,49 @@ Here's a short video that explains the project and how it uses Redis:
 
 ### How the data is stored:
 
-Refer to [this example](https://github.com/redis-developer/basic-analytics-dashboard-redis-bitmaps-nodejs#how-the-data-is-stored) for a more detailed example of what you need for this section.
+Use Redis OM Spring and Redis OM Python as base libraries to work on
+Below is JSON format of each document related
 
 ### How the data is accessed:
 
-Refer to [this example](https://github.com/redis-developer/basic-analytics-dashboard-redis-bitmaps-nodejs#how-the-data-is-accessed) for a more detailed example of what you need for this section.
+Use Redis OM Spring and Redis OM Python as base libraries to work on
 
 ## How to run it locally?
 
-[Make sure you test this with a fresh clone of your repo, these instructions will be used to judge your app.]
+### Transform Redis Cloud URL to base64
+
+Note: the redis url format will be redis://{USERNAME}:{PASSWORD}@{REDIS_HOST_URL}:{REDIS_PORT}
+
+```bash
+echo 'redis://{USERNAME}:{PASSWORD}@{REDIS_HOST_URL}:{REDIS_PORT}' | base64
+```
+
+### Replace your REDIS URL in redis-sc.yaml
+
+After you got Base64 txt data, replace it to redis-sc.yaml
+
+```bash
+REDIS_OM_URL: <YOUR_REDIS_URL in base64>
+to
+REDIS_OM_URL: BASE64_RESULT
+```
+
+### Add Stream Group in RedisInsight
+
+```bash
+XGROUP CREATE location-stream-event location-stream-event $ MKSTREAM
+```
+
+### Start Microservices with Kubernetes Cluster
+
+```bash
+kubectl apply -f ./k8s
+```
+
+### Calling the API with Postman
+Import Postman Collection: "" to your postman (or use cURL)
+
+Including Aggregator Collection - General, Driver, Management related
 
 ### Prerequisites
 
@@ -44,8 +78,6 @@ Refer to [this example](https://github.com/redis-developer/basic-analytics-dashb
 ### Local installation
 
 [Insert instructions for local installation]
-### COMMAND
-XGROUP CREATE location-stream-event location-stream-event $ MKSTREAM
 
 ## Deployment
 

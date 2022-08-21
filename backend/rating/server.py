@@ -15,7 +15,6 @@ Migrator().run()
 async def setup_db(app: Sanic):
     logger.debug('Starting Sanic')
     app.ctx.redis = get_redis_connection()
-    await Migrator().run()
 
 
 @application.after_server_start
