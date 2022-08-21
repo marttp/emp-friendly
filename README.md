@@ -8,6 +8,8 @@ This project will show the overview of microservices architecture that design ba
 
 ![Postman Example](screenshots/postman-example.png)
 
+![Kubernetes component including pods, deployments, and services](screenshots/pod-svc.png)
+
 # [TODO] Overview video
 
 Here's a short video that explains the project and how it uses Redis:
