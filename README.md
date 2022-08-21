@@ -312,7 +312,13 @@ XGROUP CREATE location-stream-event location-stream-event $ MKSTREAM
 kubectl apply -f ./k8s
 ```
 
-### [TODO] Port Forward Service (Required 3 Terminals)
+### Port Forward Service (Required 3 Terminals)
+
+```bash
+kubectl -n emp-friendly port-forward deployment/emp-friendly-general 9000:8080
+kubectl -n emp-friendly port-forward deployment/emp-friendly-driver 9001:8080
+kubectl -n emp-friendly port-forward deployment/emp-friendly-management 9002:8080
+```
 
 ### Calling the API with Postman
 
