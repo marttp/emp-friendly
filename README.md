@@ -35,6 +35,26 @@ Use Redis OM Spring and Redis OM Python as base libraries to work on
 
 ## How to run it locally?
 
+### Prerequisites
+
+Including development and deployments
+
+- Java 17 [Option1 - sdkman](https://sdkman.io/jdks) | [Option2 - Microsoft-OpenJDK](https://docs.microsoft.com/th-th/java/openjdk/download)
+- [Python 3.10.4](https://www.python.org/downloads/)
+- [Docker](https://www.docker.com/products/docker-desktop/)
+- Kubernetes Cluster [Option1 - Kind](https://kind.sigs.k8s.io/) | [Option2 - minikube](https://minikube.sigs.k8s.io/docs/start/)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/)
+- [Redis Cloud](https://redis.info/try-free-dev-to)
+- [Postman](https://www.postman.com/)
+
+### Local installation
+
+For deployment purpose only
+
+1. Install Kubernetes Cluster of choices
+2. Create Database in [Redis Cloud](https://redis.info/try-free-dev-to)
+3. Follow "How to run it locally?" instructions
+
 ### Transform Redis Cloud URL to base64
 
 Note: the redis url format will be redis://{USERNAME}:{PASSWORD}@{REDIS_HOST_URL}:{REDIS_PORT}
@@ -70,25 +90,6 @@ kubectl apply -f ./k8s
 Import Postman Collection: "" to your postman (or use cURL)
 
 Including Aggregator Collection - General, Driver, Management related
-
-### Prerequisites
-
-Including development and deployments
-
-- Java 17 [Option1 - sdkman](https://sdkman.io/jdks) | [Option2 - Microsoft-OpenJDK](https://docs.microsoft.com/th-th/java/openjdk/download)
-- [Python 3.10.4](https://www.python.org/downloads/)
-- [Docker](https://www.docker.com/products/docker-desktop/)
-- Kubernetes Cluster [Option1 - Kind](https://kind.sigs.k8s.io/) | [Option2 - minikube](https://minikube.sigs.k8s.io/docs/start/)
-- [kubectl](https://kubernetes.io/docs/tasks/tools/)
-- [Redis Cloud](https://redis.info/try-free-dev-to)
-
-### Local installation
-
-For deployment purpose only
-
-1. Install Kubernetes Cluster of choices
-2. Create Database in [Redis Cloud](https://redis.info/try-free-dev-to)
-3. Follow "How to run it locally?" instructions
 
 ## Deployment
 
