@@ -2,6 +2,8 @@
 
 EmpFriendly [Redis Hackathon on DEV 2022] - Support you employees and strive to be better
 
+This project will show the overview of microservices architecture that design base on Cloud-Native approach (actually, some parts still missing because need to compete with the times), In this regards, I design to show how we can implement it from scratch including RESTful/GraphQL API, Aggregation Pattern, Asynchronous messaging with Pub/Sub and Streams.
+
 [TODO] 
 
 [Insert app screenshots](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#uploading-assets)
@@ -64,6 +66,7 @@ kubectl apply -f ./k8s
 ```
 
 ### [TODO] Calling the API with Postman
+
 Import Postman Collection: "" to your postman (or use cURL)
 
 Including Aggregator Collection - General, Driver, Management related
@@ -71,6 +74,7 @@ Including Aggregator Collection - General, Driver, Management related
 ### Prerequisites
 
 Including development and deployments
+
 - Java 17 [Option1 - sdkman](https://sdkman.io/jdks) | [Option2 - Microsoft-OpenJDK](https://docs.microsoft.com/th-th/java/openjdk/download)
 - [Python 3.10.4](https://www.python.org/downloads/)
 - [Docker](https://www.docker.com/products/docker-desktop/)
@@ -83,7 +87,8 @@ Including development and deployments
 For deployment purpose only
 
 1. Install Kubernetes Cluster of choices
-2. Follow "How to run it locally?" instructions
+2. Create Database in [Redis Cloud](https://redis.info/try-free-dev-to)
+3. Follow "How to run it locally?" instructions
 
 ## Deployment
 

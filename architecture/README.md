@@ -7,11 +7,11 @@
 - Redis Stack (Cloud)
 - Kubernetes (Deployment/Service/Secret/ConfigMap)
 
-## Architecture
+## [TODO] Architecture
 
 ![Architecture](Technical%20High-Level%20Architecture.drawio.png)
 
-- Ingress to reverse proxy to aggregator level
+- Ingress to reverse proxy to aggregator level [REMOVE_FOR_NOW]
 - Aggregator level - General (ordinary), Driver (for driver role), Management (for admin management)
 - Internal service will communicate via Kubernetes namespace svc url
 - Secret will store only Redis connection related
