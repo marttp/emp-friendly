@@ -43,3 +43,19 @@ spec:
                 secretKeyRef:
                   name: redis-secrect
                   key: REDIS_OM_URL
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: emp-friendly-location
+  namespace: emp-friendly
+spec:
+  internalTrafficPolicy: Cluster
+  ports:
+    - name: emp-friendly-location
+      port: 50204
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: emp-friendly-location
+  type: ClusterIP
