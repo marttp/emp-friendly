@@ -5,4 +5,5 @@ import reactor.core.publisher.Mono;
 public interface PointService {
   Mono<Void> topup(PointChangeRequest body);
   Mono<Void> deduct(PointChangeRequest body);
+  Mono<Point> getPointByRefId(String refId);
 }
