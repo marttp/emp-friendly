@@ -21,7 +21,7 @@ class RatingController(private val ratingService: RatingService) {
         @Argument fromId: String,
         @Argument type: RatingTypeEnum,
         @Argument rating: Int
-    ): Mono<String> {
+    ): Mono<Boolean> {
         val ratingDto = RatingReceivedDTO(
             userId = fromId,
             targetId = id,
@@ -31,6 +31,6 @@ class RatingController(private val ratingService: RatingService) {
         )
         return ratingService.sendRating(ratingDto)
             .onErrorResume { Mono.error(RuntimeException("Error Send Rating")) }
-            .thenReturn("OK")
+            .thenReturn(true)
     }
 }
