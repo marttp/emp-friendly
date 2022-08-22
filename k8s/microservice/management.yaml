@@ -53,7 +53,7 @@ spec:
   internalTrafficPolicy: Cluster
   ports:
     - name: emp-friendly-management
-      port: 50201
+      port: 50202
       protocol: TCP
       targetPort: 8080
   selector:
