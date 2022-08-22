@@ -6,5 +6,5 @@ import java.time.LocalDateTime
 data class Transaction(
     val point: BigDecimal,
     val balancePoint: BigDecimal,
-    val createDate: LocalDateTime
+    val createdDate: LocalDateTime
 )
