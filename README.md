@@ -28,7 +28,7 @@ Here's a short video that explains the project and how it uses Redis:
 
 [![Embed your YouTube video](https://i.ytimg.com/vi/vyxdC1qK4NE/maxresdefault.jpg)](https://www.youtube.com/watch?v=vyxdC1qK4NE)
 
-## [TODO] How it works
+## How it works
 
 ### How Architecture look like?
 
