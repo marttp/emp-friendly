@@ -1,5 +1,6 @@
 package dev.tpcoder.empfriendly.driver.service.impl;
 
+import dev.tpcoder.empfriendly.driver.model.OrderResponse;
 import dev.tpcoder.empfriendly.driver.service.OrderService;
 import java.util.UUID;
 import org.slf4j.Logger;
@@ -7,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
@@ -43,5 +45,15 @@ public class ExternalOrderService implements OrderService {
         .retrieve()
         .toBodilessEntity()
         .then();
+  }
+
+  @Override
+  public Flux<OrderResponse> getActiveOrder(String userId) {
+    logger.debug("Start calling getActiveOrder");
+    return this.orderWebClient.get()
+        .uri(uriBuilder -> uriBuilder.path("/orders").queryParam("id", userId).build())
+        .header("requestUid", UUID.randomUUID().toString())
+        .retrieve()
+        .bodyToFlux(OrderResponse.class);
   }
 }
