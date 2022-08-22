@@ -50,7 +50,7 @@ spec:
     - name: emp-friendly-rest-mgm
       port: 50210
       protocol: TCP
-      targetPort: 8080
+      targetPort: 8000
   selector:
     app: emp-friendly-rest-mgm
   type: ClusterIP

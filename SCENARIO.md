@@ -18,11 +18,11 @@ EmpFriendly concept - do something that can improve employee life and give oppor
 - [x] Get own transaction history
 - [x] Pay IC Point to restaurant partner
 - ~~Pay IC Point to internal shop~~
-- [ ] Use Journey
+- [x] Use Journey
 - ~~**[Journey]** Watch driver location in order by point of time (In real-time with SSE)~~ (currently support only jedis (sync)))
 - [x] **[Journey]** Watch driver history by referenceId
-- [ ] Use Deliver
-- [ ] Use Yummy [Send rating / Get rating]
+- [x] Use Deliver
+- [x] Use Yummy [Send rating / Get rating]
 - ~~Use IC Buy~~
 
 ## Driver

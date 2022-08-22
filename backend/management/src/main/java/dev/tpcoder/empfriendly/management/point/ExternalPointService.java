@@ -1,5 +1,6 @@
 package dev.tpcoder.empfriendly.management.point;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +23,9 @@ public class ExternalPointService implements PointService {
   @Override
   public Mono<Void> topup(PointChangeRequest body) {
     logger.debug("Topup request: {}", body);
+    if (body.point().compareTo(BigDecimal.ZERO) < 0) {
+      throw new RuntimeException("Can't Negative");
+    }
     return this.webClient.post()
         .uri("/points/topup")
         .header("requestUid", UUID.randomUUID().toString())
@@ -33,6 +37,9 @@ public class ExternalPointService implements PointService {
 
   @Override
   public Mono<Void> deduct(PointChangeRequest body) {
+    if (body.point().compareTo(BigDecimal.ZERO) < 0) {
+      throw new RuntimeException("Can't Negative");
+    }
     logger.debug("Deduct request: {}", body);
     return this.webClient.post()
         .uri("/points/deduct")
@@ -41,5 +48,16 @@ public class ExternalPointService implements PointService {
         .retrieve()
         .toBodilessEntity()
         .then();
+  }
+
+  @Override
+  public Mono<Point> getPointByRefId(String refId) {
+    var path = "/points/{referenceId}";
+    logger.debug("getPointByRefId refId: {}", refId);
+    return this.webClient.get()
+        .uri(uriBuilder -> uriBuilder.path(path).build(refId))
+        .header("requestUid", UUID.randomUUID().toString())
+        .retrieve()
+        .bodyToMono(Point.class);
   }
 }

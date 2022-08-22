@@ -1,6 +1,9 @@
 package dev.tpcoder.empfriendly.point;
 
-import static dev.tpcoder.empfriendly.point.enumeration.PointProcessingType.*;
+import static dev.tpcoder.empfriendly.point.enumeration.PointProcessingType.INDIVIDUAL_CREDIT;
+import static dev.tpcoder.empfriendly.point.enumeration.PointProcessingType.INDIVIDUAL_DEBIT;
+import static dev.tpcoder.empfriendly.point.enumeration.PointProcessingType.RESTAURANT_CREDIT;
+import static dev.tpcoder.empfriendly.point.enumeration.PointProcessingType.RESTAURANT_DEBIT;
 
 import dev.tpcoder.empfriendly.point.enumeration.PointOwnerType;
 import dev.tpcoder.empfriendly.point.enumeration.PointProcessingType;
@@ -11,10 +14,9 @@ import dev.tpcoder.empfriendly.point.model.dto.TopupRequest;
 import dev.tpcoder.empfriendly.point.repository.PointChangeHistoryRepository;
 import dev.tpcoder.empfriendly.point.repository.PointRepository;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Set;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +36,15 @@ public class PointService {
   private final PointRepository pointRepository;
   private final PointChangeHistoryRepository pointChangeHistoryRepository;
 
+  public Point getPointByReferenceId(@NonNull String referenceId) {
+    return pointRepository.findById(referenceId)
+        .orElseThrow(() -> new RuntimeException("Point reference not found"));
+  }
+
   public void deductPoint(DeductRequest body) {
+    if (body.point().compareTo(BigDecimal.ZERO) < 0) {
+      throw new RuntimeException("Can't Negative");
+    }
     if (!DEBIT_SET.contains(body.type())) {
       throw new RuntimeException("Invalid operation");
     }
@@ -43,10 +53,7 @@ public class PointService {
     if (!checkValidSet(point, body.type())) {
       throw new RuntimeException("Invalid processing type");
     }
-    var deduct = body.point().multiply(BigDecimal.valueOf(-1));
-    if (deduct.compareTo(BigDecimal.ZERO) >= 0) {
-      deduct = deduct.multiply(BigDecimal.valueOf(-1));
-    }
+    var deduct = body.point();
     var balance = point.getCurrent().subtract(deduct);
     if (balance.compareTo(BigDecimal.ZERO) < 0) {
       throw new RuntimeException("Current balance insufficient");
@@ -58,6 +65,9 @@ public class PointService {
   }
 
   public void topUpPoint(TopupRequest body) {
+    if (body.point().compareTo(BigDecimal.ZERO) < 0) {
+      throw new RuntimeException("Can't Negative");
+    }
     if (!CREDIT_SET.contains(body.type())) {
       throw new RuntimeException("Invalid operation");
     }
@@ -67,9 +77,6 @@ public class PointService {
       throw new RuntimeException("Invalid processing type");
     }
     var topup = body.point();
-    if (topup.compareTo(BigDecimal.ZERO) <= 0) {
-      topup = topup.multiply(BigDecimal.valueOf(-1));
-    }
     var balance = point.getCurrent().add(topup);
     var log = createHistory(body.referenceId(), topup, balance);
     point.setCurrent(balance);

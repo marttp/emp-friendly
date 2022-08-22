@@ -19,3 +19,6 @@ gradle-app.setting
 ## Python venv
 /**/venv/
 /**/__pycache__/
+
+# My Internal use for Access POC Cluster
+ingress.yaml

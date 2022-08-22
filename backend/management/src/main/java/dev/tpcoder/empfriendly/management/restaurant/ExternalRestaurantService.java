@@ -31,7 +31,7 @@ public class ExternalRestaurantService implements RestaurantService {
   }
 
   @Override
-  public Mono<Restaurant> createRestaurant(Restaurant restaurant) {
+  public Mono<Restaurant> createRestaurant(CreateRestaurantRequest restaurant) {
     logger.debug("Create Restaurants");
     logger.debug("body: {}", restaurant);
     return this.webClient.post()

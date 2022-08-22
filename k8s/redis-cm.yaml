@@ -18,11 +18,11 @@ data:
   PAYMENT_URL_FOR_QR: '/payments/{id}'
   PAYMENT_RESTAURANT_URL_FOR_QR: '/payments/restaurants/{id}'
   # URL
-  EMPLOYEE_SERVICE_URL: emp-friendly-employee.emp-friendly.svc.cluster.local:50203
-  LOCATION_SERVICE_URL: emp-friendly-location.emp-friendly.svc.cluster.local:50204
-  POINT_SERVICE_URL: emp-friendly-point.emp-friendly.svc.cluster.local:50205
-  ORDER_SERVICE_URL: emp-friendly-order.emp-friendly.svc.cluster.local:50206
-  PAYMENT_SERVICE_URL: emp-friendly-payment.emp-friendly.svc.cluster.local:50207
-  QR_SERVICE_URL: emp-friendly-qr-service.emp-friendly.svc.cluster.local:50208
-  RATING_SERVICE_URL: emp-friendly-rating.emp-friendly.svc.cluster.local:50209
-  RESTAURANT_MANAGEMENT_SERVICE_URL: emp-friendly-rest-mgm.emp-friendly.svc.cluster.local:50210
+  EMPLOYEE_SERVICE_URL: http://emp-friendly-employee.emp-friendly.svc.cluster.local:50203
+  LOCATION_SERVICE_URL: http://emp-friendly-location.emp-friendly.svc.cluster.local:50204
+  POINT_SERVICE_URL: http://emp-friendly-point.emp-friendly.svc.cluster.local:50205
+  ORDER_SERVICE_URL: http://emp-friendly-order.emp-friendly.svc.cluster.local:50206
+  PAYMENT_SERVICE_URL: http://emp-friendly-payment.emp-friendly.svc.cluster.local:50207
+  QR_SERVICE_URL: http://emp-friendly-qr-service.emp-friendly.svc.cluster.local:50208
+  RATING_SERVICE_URL: http://emp-friendly-rating.emp-friendly.svc.cluster.local:50209
+  RESTAURANT_MANAGEMENT_SERVICE_URL: http://emp-friendly-rest-mgm.emp-friendly.svc.cluster.local:50210

@@ -21,7 +21,7 @@ public class RestaurantController {
 
   @MutationMapping
   public Mono<Restaurant> createRestaurant(@Argument String restaurantId, @Argument String name) {
-    Restaurant newRestaurant = new Restaurant(restaurantId, name);
+    CreateRestaurantRequest newRestaurant = new CreateRestaurantRequest(restaurantId, name);
     return restaurantService.createRestaurant(newRestaurant);
   }
 

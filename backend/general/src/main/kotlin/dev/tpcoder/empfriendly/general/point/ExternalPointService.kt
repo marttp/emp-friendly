@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.client.WebClient
 import reactor.core.publisher.Flux
+import reactor.core.publisher.Mono
 import java.util.*
 
 @Service
@@ -14,12 +15,22 @@ class ExternalPointService(@Qualifier("pointWebClient") private val pointWebClie
     private val logger = LoggerFactory.getLogger(ExternalPointService::class.java)
 
     override fun getTransactionHistory(id: String): Flux<Transaction> {
-        val path = "/history/{refId}"
+        val path = "/points/history/$id"
         logger.debug("Get transaction history id: $id")
         return this.pointWebClient.get()
-            .uri { uriBuilder -> uriBuilder.path(path).build(id) }
+            .uri(path)
             .header("requestUid", UUID.randomUUID().toString())
             .retrieve()
             .bodyToFlux(Transaction::class.java)
+    }
+
+    override fun getPointByRefId(referenceId: String): Mono<Point> {
+        logger.debug("Get getPointByRefId: $referenceId")
+        val path = "/points/$referenceId"
+        return this.pointWebClient.get()
+            .uri(path)
+            .header("requestUid", UUID.randomUUID().toString())
+            .retrieve()
+            .bodyToMono(Point::class.java)
     }
 }
