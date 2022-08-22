@@ -12,10 +12,11 @@
     "deploy_buttons": [],
     "language": ["Java", "Kotlin", "Python"],
     "redis_commands": [
-        "XGROUP"
+        "XGROUP",
+        "JSON.GET"
     ],
-    "redis_features": ["primary database", "caching", "stream", "pub/sub"],
-    "redis_modules": ["RediJSON", "RediSearch", "RedisStreams", "RedisTimeseries"],
+    "redis_features": ["primary database", "stream", "pub/sub"],
+    "redis_modules": ["RedisJSON", "RediSearch", "RedisStreams"],
     "app_image_urls": [],
     "youtube_url": "", //Provide a Youtube link to your app's video
     "special_tags": ["Hackathon"],

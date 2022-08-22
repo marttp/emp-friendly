@@ -28,7 +28,7 @@ Here's a short video that explains the project and how it uses Redis:
 
 [![Embed your YouTube video](https://i.ytimg.com/vi/vyxdC1qK4NE/maxresdefault.jpg)](https://www.youtube.com/watch?v=vyxdC1qK4NE)
 
-## [TODO] How it works
+## How it works
 
 ### How Architecture look like?
 
@@ -36,9 +36,21 @@ Here's a short video that explains the project and how it uses Redis:
 
 [More Informations](https://github.com/marttp/emp-friendly/tree/main/architecture) are inside the architecture directory
 
+### Scenario 1 - Admin level (who can manage on this role) manipulate data
+
+![Admin level manipulate internal data](./scenarios/images/AdminManagement.drawio.png)
+
+### Scenario 2 - Pay IC Points
+
+![Pay IC Points](./scenarios/images/PayICPoint.drawio.png)
+
+### Scenario 3 - Give rating to restaurant/driver
+
+![Give rating](./scenarios/images/Query_Mutation%20Rating.drawio.png)
+
 ### Scenario 4 - Driver accepted Deliver/Journey => Start collect location of drivers
 
-![Architecture](./scenarios/images/AcceptOrderThenStartCollectLocation.drawio.png)
+![Driver accepted Deliver/Journey](./scenarios/images/AcceptOrderThenStartCollectLocation.drawio.png)
 
 ### How the data is stored:
 
