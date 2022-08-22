@@ -327,9 +327,9 @@ kubectl apply -f ./k8s
 ### Port Forward Service (Required 3 Terminals)
 
 ```bash
-kubectl -n emp-friendly port-forward deployment/emp-friendly-general 9000:8080
-kubectl -n emp-friendly port-forward deployment/emp-friendly-driver 9001:8080
-kubectl -n emp-friendly port-forward deployment/emp-friendly-management 9002:8080
+kubectl -n emp-friendly port-forward service/emp-friendly-general 9000:50200
+kubectl -n emp-friendly port-forward service/emp-friendly-driver 9001:50201
+kubectl -n emp-friendly port-forward service/emp-friendly-management 9002:50202
 ```
 
 ### Calling the API with Postman

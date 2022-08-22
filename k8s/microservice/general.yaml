@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emp-friendly-general
+  namespace: emp-friendly
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emp-friendly-general
+  template:
+    metadata:
+      labels:
+        app: emp-friendly-general
+    spec:
+      containers:
+        - name: emp-friendly-general
+          image: marttp/emp-friendly-general
+          resources:
+            requests:
+              cpu: 300m
+              memory: 512Mi
+            limits:
+              cpu: 300m
+              memory: 512Mi
+          ports:
+            - containerPort: 8080
+              name: general
+              protocol: TCP
+          env:
+            - name: PAYMENT_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: PAYMENT_SERVICE_URL
+            - name: POINT_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: POINT_SERVICE_URL
+            - name: ORDER_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: ORDER_SERVICE_URL
+            - name: QR_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: QR_SERVICE_URL
+            - name: RATING_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: RATING_SERVICE_URL
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: emp-friendly-general
+  namespace: emp-friendly
+spec:
+  internalTrafficPolicy: Cluster
+  ports:
+    - name: emp-friendly-general
+      port: 50200
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: emp-friendly-general
+  type: ClusterIP

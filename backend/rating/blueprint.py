@@ -3,9 +3,12 @@ from sanic import Blueprint
 from sanic import response, HTTPResponse, Request
 from models import RatingHistory
 from functools import reduce
+from config import received_rating_topic
+import json
 
 bp = Blueprint("Rating", url_prefix="/ratings")
 client = get_redis_connection()
+
 
 # @bp.get('/')
 # async def hello(request) -> HTTPResponse:
@@ -32,3 +35,10 @@ async def get_rating_by_id(request: Request, target_id: str) -> HTTPResponse:
     sum = reduce(lambda a, b: a + b, rating_num_list)
     result = sum / size
     return response.json({'rating': result})
+
+
+@bp.post('/')
+async def add_rating(request: Request) -> HTTPResponse:
+    body = request.json
+    await client.publish(received_rating_topic, json.dumps(body, default=str))
+    return response.empty(status=201)

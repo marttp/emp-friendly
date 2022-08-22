@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emp-friendly-driver
+  namespace: emp-friendly
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emp-friendly-driver
+  template:
+    metadata:
+      labels:
+        app: emp-friendly-driver
+    spec:
+      containers:
+        - name: emp-friendly-driver
+          image: marttp/emp-friendly-driver
+          resources:
+            requests:
+              cpu: 300m
+              memory: 512Mi
+            limits:
+              cpu: 300m
+              memory: 512Mi
+          ports:
+            - containerPort: 8080
+              name: driver
+              protocol: TCP
+          env:
+            - name: LOCATION_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: LOCATION_SERVICE_URL
+            - name: ORDER_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: ORDER_SERVICE_URL
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: emp-friendly-driver
+  namespace: emp-friendly
+spec:
+  internalTrafficPolicy: Cluster
+  ports:
+    - name: emp-friendly-driver
+      port: 50201
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: emp-friendly-driver
+  type: ClusterIP

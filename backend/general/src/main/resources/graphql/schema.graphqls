@@ -1,0 +1,18 @@
+type Query {
+    getRatingById(id: ID): Rating
+    getTransactionHistory(refId: ID): [Transaction]
+}
+
+type Mutation {
+    sendRating(id: ID, fromId: ID, type: String, rating: Int): Boolean
+}
+
+type Rating {
+    rating: Float
+}
+
+type Transaction {
+    point: Float,
+    balancePoint: Float,
+    createDate: String
+}
