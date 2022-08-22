@@ -5,7 +5,7 @@ import org.springframework.graphql.data.method.annotation.MutationMapping
 import org.springframework.graphql.data.method.annotation.QueryMapping
 import org.springframework.stereotype.Controller
 import reactor.core.publisher.Mono
-import java.time.LocalDateTime
+import java.time.ZonedDateTime
 
 @Controller
 class RatingController(private val ratingService: RatingService) {
@@ -27,7 +27,7 @@ class RatingController(private val ratingService: RatingService) {
             targetId = id,
             type = type,
             rate = rating,
-            createdDate = LocalDateTime.now()
+            timestamp = ZonedDateTime.now().toInstant().toEpochMilli()
         )
         return ratingService.sendRating(ratingDto)
             .onErrorResume { Mono.error(RuntimeException("Error Send Rating")) }

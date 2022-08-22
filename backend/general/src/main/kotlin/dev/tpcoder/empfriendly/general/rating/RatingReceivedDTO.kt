@@ -14,6 +14,5 @@ data class RatingReceivedDTO(
 
     val rate: Int,
 
-    @JsonProperty("created_date")
-    val createdDate: LocalDateTime
+    val timestamp: Long
 )
