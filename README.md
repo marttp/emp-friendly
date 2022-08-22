@@ -36,6 +36,10 @@ Here's a short video that explains the project and how it uses Redis:
 
 [More Informations](https://github.com/marttp/emp-friendly/tree/main/architecture) are inside the architecture directory
 
+### Scenario 4 - Driver accepted Deliver/Journey => Start collect location of drivers
+
+![Architecture](./scenarios/images/AcceptOrderThenStartCollectLocation.drawio.png)
+
 ### How the data is stored:
 
 Use Redis OM Spring and Redis OM Python as base libraries to work on
@@ -189,12 +193,12 @@ Below is JSON format of each document related
 
 ```json
 {
-  "pk": "01GAMSGVQ6NKXFKB9FEMRD441S",
-  "user_id": "test_user",
-  "target_id": "test_target",
-  "type": "Restaurant",
+  "pk": "01GB2WZ8QKQTMRG8422SH59H60",
+  "user_id": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+  "target_id": "a3cbc4f1-3636-4db9-bb42-36c49ba655b9",
+  "type": "RESTAURANT",
   "rate": 4,
-  "created_date": "2022-08-17T02:17:28.176224"
+  "timestamp": 1661176088890
 }
 ```
 
@@ -321,7 +325,15 @@ XGROUP CREATE location-stream-event location-stream-event $ MKSTREAM
 ### Start Microservices with Kubernetes Cluster
 
 ```bash
+kubectl create -f ./k8s
+cd k8s
+kubectl create -f ./microservice
+
+or
+
 kubectl apply -f ./k8s
+cd k8s
+kubectl apply -f ./microservice
 ```
 
 ### Port Forward Service (Required 3 Terminals)

@@ -10,19 +10,1513 @@
 			"name": "Aggregator Layer",
 			"item": [
 				{
+					"name": "Management",
+					"item": [
+						{
+							"name": "Employees",
+							"item": [
+								{
+									"name": "Find by age between min max",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:9002/employees/age?min=30&max=40",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9002",
+											"path": [
+												"employees",
+												"age"
+											],
+											"query": [
+												{
+													"key": "min",
+													"value": "30"
+												},
+												{
+													"key": "max",
+													"value": "40"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Find by age between min max",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://localhost:9002/employees/age?min=30&max=40",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9002",
+													"path": [
+														"employees",
+														"age"
+													],
+													"query": [
+														{
+															"key": "min",
+															"value": "30"
+														},
+														{
+															"key": "max",
+															"value": "40"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "transfer-encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n    {\n        \"id\": \"ddf5757a-ca21-41f4-b668-836d7755d70d\",\n        \"firstName\": \"Kennedy\",\n        \"lastName\": \"Bowden\",\n        \"age\": 32,\n        \"email\": \"kennedy.bowden@empfriendly.dev\",\n        \"addressLoc\": {\n            \"x\": 21.948998,\n            \"y\": -70.192999\n        },\n        \"address\": {\n            \"houseNumber\": \"2222222\",\n            \"city\": \"Port\",\n            \"state\": \"New York\",\n            \"postalCode\": \"13906-2123\",\n            \"country\": \"United States\"\n        },\n        \"tags\": [\n            \"DEVOPS\",\n            \"CLOUD_ENGINEER\"\n        ],\n        \"type\": \"ORDINARY\",\n        \"createdDate\": \"2022-08-22T09:39:40.974\"\n    },\n    {\n        \"id\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"firstName\": \"Arun\",\n        \"lastName\": \"Jeffery\",\n        \"age\": 35,\n        \"email\": \"arun.jeffery@empfriendly.dev\",\n        \"addressLoc\": {\n            \"x\": -165.205427,\n            \"y\": 4.07756\n        },\n        \"address\": {\n            \"houseNumber\": \"4444444\",\n            \"city\": \"Port\",\n            \"state\": \"New York\",\n            \"postalCode\": \"13906-2123\",\n            \"country\": \"United States\"\n        },\n        \"tags\": [\n            \"DRIVER\"\n        ],\n        \"type\": \"DRIVER\",\n        \"driverDetail\": {\n            \"driverLicense\": \"DR1111\"\n        },\n        \"createdDate\": \"2022-08-22T09:39:41.253\"\n    },\n    {\n        \"id\": \"1b4a4de9-0eca-4c73-97c6-e1b9df06678e\",\n        \"firstName\": \"Siddharth\",\n        \"lastName\": \"Wade\",\n        \"age\": 36,\n        \"email\": \"siddharth.wade@empfriendly.dev\",\n        \"addressLoc\": {\n            \"x\": -127.494467,\n            \"y\": 52.101911\n        },\n        \"address\": {\n            \"houseNumber\": \"5555555\",\n            \"city\": \"East\",\n            \"state\": \"California\",\n            \"postalCode\": \"64200\",\n            \"country\": \"United States\"\n        },\n        \"tags\": [\n            \"DRIVER\"\n        ],\n        \"type\": \"DRIVER\",\n        \"driverDetail\": {\n            \"driverLicense\": \"DR2222\"\n        },\n        \"createdDate\": \"2022-08-22T09:39:41.37\"\n    }\n]"
+										}
+									]
+								},
+								{
+									"name": "Find by location nearby",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:9002/employees/loc_near?lat=14.0364895&long=100.7433723&d=3",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9002",
+											"path": [
+												"employees",
+												"loc_near"
+											],
+											"query": [
+												{
+													"key": "lat",
+													"value": "14.0364895"
+												},
+												{
+													"key": "long",
+													"value": "100.7433723"
+												},
+												{
+													"key": "d",
+													"value": "3"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Find by location nearby",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://localhost:9002/employees/loc_near?lat=14.0364895&long=100.7433723&d=3",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9002",
+													"path": [
+														"employees",
+														"loc_near"
+													],
+													"query": [
+														{
+															"key": "lat",
+															"value": "14.0364895"
+														},
+														{
+															"key": "long",
+															"value": "100.7433723"
+														},
+														{
+															"key": "d",
+															"value": "3"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "transfer-encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n    {\n        \"id\": \"d37b2d0b-c06d-429c-b56d-7465c3959993\",\n        \"firstName\": \"Thanaphoom\",\n        \"lastName\": \"Babparn\",\n        \"age\": 25,\n        \"email\": \"thanaphoom.babparn@empfriendly.dev\",\n        \"addressLoc\": {\n            \"x\": 100.7433723,\n            \"y\": 14.0364895\n        },\n        \"address\": {\n            \"houseNumber\": \"109/1070\",\n            \"city\": \"Thanyaburi\",\n            \"state\": \"Pathum Thani\",\n            \"postalCode\": \"12110\",\n            \"country\": \"Thailand\"\n        },\n        \"tags\": [\n            \"DEVOPS\",\n            \"BACKEND_DEVELOPER\",\n            \"CLOUD_ENGINEER\",\n            \"SOFTWARE_ENGINEER\"\n        ],\n        \"type\": \"ORDINARY\",\n        \"createdDate\": \"2022-08-22T09:39:40.583\"\n    }\n]"
+										}
+									]
+								},
+								{
+									"name": "Find by first and last",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:9002/employees/name?first=Thana*&last=Bab*",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9002",
+											"path": [
+												"employees",
+												"name"
+											],
+											"query": [
+												{
+													"key": "first",
+													"value": "Thana*"
+												},
+												{
+													"key": "last",
+													"value": "Bab*"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Find by first and last",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://localhost:9002/employees/name?first=Thana*&last=Bab*",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9002",
+													"path": [
+														"employees",
+														"name"
+													],
+													"query": [
+														{
+															"key": "first",
+															"value": "Thana*"
+														},
+														{
+															"key": "last",
+															"value": "Bab*"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "transfer-encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n    {\n        \"id\": \"d37b2d0b-c06d-429c-b56d-7465c3959993\",\n        \"firstName\": \"Thanaphoom\",\n        \"lastName\": \"Babparn\",\n        \"age\": 25,\n        \"email\": \"thanaphoom.babparn@empfriendly.dev\",\n        \"addressLoc\": {\n            \"x\": 100.7433723,\n            \"y\": 14.0364895\n        },\n        \"address\": {\n            \"houseNumber\": \"109/1070\",\n            \"city\": \"Thanyaburi\",\n            \"state\": \"Pathum Thani\",\n            \"postalCode\": \"12110\",\n            \"country\": \"Thailand\"\n        },\n        \"tags\": [\n            \"DEVOPS\",\n            \"BACKEND_DEVELOPER\",\n            \"CLOUD_ENGINEER\",\n            \"SOFTWARE_ENGINEER\"\n        ],\n        \"type\": \"ORDINARY\",\n        \"createdDate\": \"2022-08-22T09:39:40.583\"\n    }\n]"
+										}
+									]
+								},
+								{
+									"name": "Find by search query",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:9002/employees/search?q=Thanaphoom",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9002",
+											"path": [
+												"employees",
+												"search"
+											],
+											"query": [
+												{
+													"key": "q",
+													"value": "Thanaphoom"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Find by search query",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://localhost:9002/employees/search?q=Thanaphoom",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9002",
+													"path": [
+														"employees",
+														"search"
+													],
+													"query": [
+														{
+															"key": "q",
+															"value": "Thanaphoom"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "transfer-encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n    {\n        \"id\": \"d37b2d0b-c06d-429c-b56d-7465c3959993\",\n        \"firstName\": \"Thanaphoom\",\n        \"lastName\": \"Babparn\",\n        \"age\": 25,\n        \"email\": \"thanaphoom.babparn@empfriendly.dev\",\n        \"addressLoc\": {\n            \"x\": 100.7433723,\n            \"y\": 14.0364895\n        },\n        \"address\": {\n            \"houseNumber\": \"109/1070\",\n            \"city\": \"Thanyaburi\",\n            \"state\": \"Pathum Thani\",\n            \"postalCode\": \"12110\",\n            \"country\": \"Thailand\"\n        },\n        \"tags\": [\n            \"DEVOPS\",\n            \"BACKEND_DEVELOPER\",\n            \"CLOUD_ENGINEER\",\n            \"SOFTWARE_ENGINEER\"\n        ],\n        \"type\": \"ORDINARY\",\n        \"createdDate\": \"2022-08-22T09:39:40.583\"\n    }\n]"
+										}
+									]
+								},
+								{
+									"name": "Find employee by type",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:9002/employees/type/driver",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9002",
+											"path": [
+												"employees",
+												"type",
+												"driver"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Find employee by type",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://localhost:9002/employees/type/driver",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9002",
+													"path": [
+														"employees",
+														"type",
+														"driver"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "transfer-encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n    {\n        \"id\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"firstName\": \"Arun\",\n        \"lastName\": \"Jeffery\",\n        \"age\": 35,\n        \"email\": \"arun.jeffery@empfriendly.dev\",\n        \"addressLoc\": {\n            \"x\": -165.205427,\n            \"y\": 4.07756\n        },\n        \"address\": {\n            \"houseNumber\": \"4444444\",\n            \"city\": \"Port\",\n            \"state\": \"New York\",\n            \"postalCode\": \"13906-2123\",\n            \"country\": \"United States\"\n        },\n        \"tags\": [\n            \"DRIVER\"\n        ],\n        \"type\": \"DRIVER\",\n        \"driverDetail\": {\n            \"driverLicense\": \"DR1111\"\n        },\n        \"createdDate\": \"2022-08-22T09:39:41.253\"\n    },\n    {\n        \"id\": \"1b4a4de9-0eca-4c73-97c6-e1b9df06678e\",\n        \"firstName\": \"Siddharth\",\n        \"lastName\": \"Wade\",\n        \"age\": 36,\n        \"email\": \"siddharth.wade@empfriendly.dev\",\n        \"addressLoc\": {\n            \"x\": -127.494467,\n            \"y\": 52.101911\n        },\n        \"address\": {\n            \"houseNumber\": \"5555555\",\n            \"city\": \"East\",\n            \"state\": \"California\",\n            \"postalCode\": \"64200\",\n            \"country\": \"United States\"\n        },\n        \"tags\": [\n            \"DRIVER\"\n        ],\n        \"type\": \"DRIVER\",\n        \"driverDetail\": {\n            \"driverLicense\": \"DR2222\"\n        },\n        \"createdDate\": \"2022-08-22T09:39:41.37\"\n    },\n    {\n        \"id\": \"93e16962-57d0-4a27-b8f4-8db20f29b25a\",\n        \"firstName\": \"Trevor\",\n        \"lastName\": \"Ritter\",\n        \"age\": 46,\n        \"email\": \"trevor.ritter@empfriendly.dev\",\n        \"addressLoc\": {\n            \"x\": -52.199862,\n            \"y\": -57.06264\n        },\n        \"address\": {\n            \"houseNumber\": \"6666666\",\n            \"city\": \"Lake\",\n            \"state\": \"Idaho\",\n            \"postalCode\": \"10132-7595\",\n            \"country\": \"United States\"\n        },\n        \"tags\": [\n            \"DRIVER\"\n        ],\n        \"type\": \"DRIVER\",\n        \"driverDetail\": {\n            \"driverLicense\": \"DR3333\"\n        },\n        \"createdDate\": \"2022-08-22T09:39:41.488\"\n    }\n]"
+										}
+									]
+								},
+								{
+									"name": "Find employee tag",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:9002/employees/tags?tags=BACKEND_DEVELOPER,BUSINESS_ANALYST",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9002",
+											"path": [
+												"employees",
+												"tags"
+											],
+											"query": [
+												{
+													"key": "tags",
+													"value": "BACKEND_DEVELOPER,BUSINESS_ANALYST"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Find employee tag",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://localhost:9002/employees/tags?tags=BACKEND_DEVELOPER,BUSINESS_ANALYST",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9002",
+													"path": [
+														"employees",
+														"tags"
+													],
+													"query": [
+														{
+															"key": "tags",
+															"value": "BACKEND_DEVELOPER,BUSINESS_ANALYST"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "transfer-encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n    {\n        \"id\": \"d37b2d0b-c06d-429c-b56d-7465c3959993\",\n        \"firstName\": \"Thanaphoom\",\n        \"lastName\": \"Babparn\",\n        \"age\": 25,\n        \"email\": \"thanaphoom.babparn@empfriendly.dev\",\n        \"addressLoc\": {\n            \"x\": 100.7433723,\n            \"y\": 14.0364895\n        },\n        \"address\": {\n            \"houseNumber\": \"109/1070\",\n            \"city\": \"Thanyaburi\",\n            \"state\": \"Pathum Thani\",\n            \"postalCode\": \"12110\",\n            \"country\": \"Thailand\"\n        },\n        \"tags\": [\n            \"DEVOPS\",\n            \"BACKEND_DEVELOPER\",\n            \"CLOUD_ENGINEER\",\n            \"SOFTWARE_ENGINEER\"\n        ],\n        \"type\": \"ORDINARY\",\n        \"createdDate\": \"2022-08-22T09:39:40.583\"\n    },\n    {\n        \"id\": \"1636a414-1f16-45b9-8e36-28507c108be9\",\n        \"firstName\": \"Ptolemy\",\n        \"lastName\": \"Mccallum\",\n        \"age\": 26,\n        \"email\": \"ptolemy.mccallum@empfriendly.dev\",\n        \"addressLoc\": {\n            \"x\": -29.604922,\n            \"y\": -38.118599\n        },\n        \"address\": {\n            \"houseNumber\": \"3333333\",\n            \"city\": \"Port\",\n            \"state\": \"Maine\",\n            \"postalCode\": \"49962-4346\",\n            \"country\": \"United States\"\n        },\n        \"tags\": [\n            \"BUSINESS_ANALYST\",\n            \"FRONTEND_DEVELOPER\",\n            \"DESIGNER\"\n        ],\n        \"type\": \"ORDINARY\",\n        \"createdDate\": \"2022-08-22T09:39:41.136\"\n    }\n]"
+										}
+									]
+								},
+								{
+									"name": "Create new employee",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"Test1\",\n    \"lastName\": \"Test1\",\n    \"age\": 56,\n    \"email\": \"test1.test1@empfriendly.dev\",\n    \"addressLoc\": {\n        \"x\": 22.948998,\n        \"y\": -70.192999\n    },\n    \"address\": {\n        \"houseNumber\": \"99912312\",\n        \"city\": \"Port\",\n        \"state\": \"New York\",\n        \"postalCode\": \"13906-2123\",\n        \"country\": \"United States\"\n    },\n    \"tags\": [\n        \"CLOUD_ENGINEER\"\n    ],\n    \"type\": \"ORDINARY\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:9002/employees",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9002",
+											"path": [
+												"employees"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Create new employee",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"firstName\": \"Test1\",\n    \"lastName\": \"Test1\",\n    \"age\": 56,\n    \"email\": \"test1.test1@empfriendly.dev\",\n    \"addressLoc\": {\n        \"x\": 22.948998,\n        \"y\": -70.192999\n    },\n    \"address\": {\n        \"houseNumber\": \"99912312\",\n        \"city\": \"Port\",\n        \"state\": \"New York\",\n        \"postalCode\": \"13906-2123\",\n        \"country\": \"United States\"\n    },\n    \"tags\": [\n        \"CLOUD_ENGINEER\"\n    ],\n    \"type\": \"ORDINARY\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:9002/employees",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9002",
+													"path": [
+														"employees"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "387"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": \"545ac774-1a64-4049-bd43-e3c42e5faf50\",\n    \"firstName\": \"Test1\",\n    \"lastName\": \"Test1\",\n    \"age\": 56,\n    \"email\": \"test1.test1@empfriendly.dev\",\n    \"addressLoc\": {\n        \"x\": 22.948998,\n        \"y\": -70.192999\n    },\n    \"address\": {\n        \"houseNumber\": \"99912312\",\n        \"city\": \"Port\",\n        \"state\": \"New York\",\n        \"postalCode\": \"13906-2123\",\n        \"country\": \"United States\"\n    },\n    \"tags\": [\n        \"CLOUD_ENGINEER\"\n    ],\n    \"type\": \"ORDINARY\",\n    \"createdDate\": \"2022-08-22T10:04:02.061729118\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Point",
+							"item": [
+								{
+									"name": "1 - Topup [Individual]",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"type\": \"INDIVIDUAL_CREDIT\",\n    \"referenceId\": \"d37b2d0b-c06d-429c-b56d-7465c3959993\",\n    \"point\": \"1200.00\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:9002/points/topup",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9002",
+											"path": [
+												"points",
+												"topup"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "1 - Topup [Individual]",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"type\": \"INDIVIDUAL_CREDIT\",\n    \"referenceId\": \"d37b2d0b-c06d-429c-b56d-7465c3959993\",\n    \"point\": \"1200.00\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:9002/points/topup",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9002",
+													"path": [
+														"points",
+														"topup"
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "plain",
+											"header": [],
+											"cookie": [],
+											"body": null
+										}
+									]
+								},
+								{
+									"name": "2 - Deduct [Restaurant]",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"type\": \"RESTAURANT_DEBIT\",\n    \"referenceId\": \"d72d77fb-e96d-4d9a-964d-f2bf605c7e0b\",\n    \"point\": \"10.00\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:9002/points/deduct",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9002",
+											"path": [
+												"points",
+												"deduct"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "2 - Deduct [Restaurant]",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"type\": \"RESTAURANT_DEBIT\",\n    \"referenceId\": \"d72d77fb-e96d-4d9a-964d-f2bf605c7e0b\",\n    \"point\": \"10.00\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:9002/points/deduct",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9002",
+													"path": [
+														"points",
+														"deduct"
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "plain",
+											"header": [],
+											"cookie": [],
+											"body": null
+										}
+									]
+								},
+								{
+									"name": "3 - Get Point by referenceId",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:9002/points/d72d77fb-e96d-4d9a-964d-f2bf605c7e0b",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9002",
+											"path": [
+												"points",
+												"d72d77fb-e96d-4d9a-964d-f2bf605c7e0b"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "3 - Before deduct",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://localhost:9002/points/d72d77fb-e96d-4d9a-964d-f2bf605c7e0b",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9002",
+													"path": [
+														"points",
+														"d72d77fb-e96d-4d9a-964d-f2bf605c7e0b"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "90"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"referenceId\": \"d72d77fb-e96d-4d9a-964d-f2bf605c7e0b\",\n    \"current\": 100,\n    \"type\": \"RESTAURANT\"\n}"
+										},
+										{
+											"name": "3 - After Deduct",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://localhost:9002/points/d72d77fb-e96d-4d9a-964d-f2bf605c7e0b",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9002",
+													"path": [
+														"points",
+														"d72d77fb-e96d-4d9a-964d-f2bf605c7e0b"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "89"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"referenceId\": \"d72d77fb-e96d-4d9a-964d-f2bf605c7e0b\",\n    \"current\": 90,\n    \"type\": \"RESTAURANT\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Restaurant - GraphQL",
+							"item": [
+								{
+									"name": "GrahpQL - Get Restaurants",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\n    restaurants {\n        restaurantId\n        name\n    }\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:9002/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9002",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "{\n    restaurants {\n        restaurantId\n        name\n    }\n}",
+														"variables": ""
+													}
+												},
+												"url": {
+													"raw": "http://localhost:9002/graphql",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9002",
+													"path": [
+														"graphql"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "432"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"restaurants\": [\n            {\n                \"restaurantId\": \"test-id\",\n                \"name\": \"test-name\"\n            },\n            {\n                \"restaurantId\": \"a3cbc4f1-3636-4db9-bb42-36c49ba655b9\",\n                \"name\": \"SHOP-1\"\n            },\n            {\n                \"restaurantId\": \"d72d77fb-e96d-4d9a-964d-f2bf605c7e0b\",\n                \"name\": \"SHOP-2\"\n            },\n            {\n                \"restaurantId\": \"c820da4c-d8de-4229-848b-33e5f183a22c\",\n                \"name\": \"SHOP-3\"\n            },\n            {\n                \"restaurantId\": \"f084e35a-f745-4c86-b0d5-aae81bd632a9\",\n                \"name\": \"SHOP-4\"\n            },\n            {\n                \"restaurantId\": \"d31710fc-ba84-4ef9-ae2e-3c8e38e1c84c\",\n                \"name\": \"SHOP-5\"\n            }\n        ]\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "GrahpQL - Create Restaurant",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "mutation {\n    createRestaurant(restaurantId: \"testtest\", name: \"TEST\") {\n        restaurantId,\n        name\n    }\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:9002/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9002",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation {\n    createRestaurant(restaurantId: \"testtest\", name: \"TEST\") {\n        restaurantId,\n        name\n    }\n}",
+														"variables": ""
+													}
+												},
+												"url": {
+													"raw": "http://localhost:9002/graphql",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9002",
+													"path": [
+														"graphql"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "71"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"createRestaurant\": {\n            \"restaurantId\": \"testtest\",\n            \"name\": \"TEST\"\n        }\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "GrahpQL - Delete Restaurant",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "mutation {\n    deleteRestaurant(restaurantId: \"testtest\") \n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:9002/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9002",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation {\n    deleteRestaurant(restaurantId: \"testtest\") \n}",
+														"variables": ""
+													}
+												},
+												"url": {
+													"raw": "http://localhost:9002/graphql",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9002",
+													"path": [
+														"graphql"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "34"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"deleteRestaurant\": \"OK\"\n    }\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
 					"name": "General",
-					"item": []
+					"item": [
+						{
+							"name": "QR",
+							"item": [
+								{
+									"name": "Get QR Code restaurant",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:9000/qr/a3cbc4f1-3636-4db9-bb42-36c49ba655b9",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"qr",
+												"a3cbc4f1-3636-4db9-bb42-36c49ba655b9"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "QR Restaurant: a3cbc4f1-3636-4db9-bb42-36c49ba655b9 [SHOP-1]",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://localhost:9000/qr/a3cbc4f1-3636-4db9-bb42-36c49ba655b9",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9000",
+													"path": [
+														"qr",
+														"a3cbc4f1-3636-4db9-bb42-36c49ba655b9"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "965"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"base64\": \"iVBORw0KGgoAAAANSUhEUgAAAYYAAAGGAQAAAABX+xtIAAACkUlEQVR4nO2cTY7iMBCFv5og9TIj9QE4SrjZqG8WjsINzBIp6M3CvwmzYdTQYJUXKHTySY6eX7lcNm3ivnb9dScATjjhhBNOPJdA0pKvR0kK+WpmEDBIc/vwa76HE/cSkhSltQOD4LwDxoulETFKZWy88ns4cQdxNDPgahz3F2PSxZhOH7LDOd0w+/30XjnxEGK3/cM0I44Gxrgg2Cb2r/keTvw/oS8zYwqDmE5m2ec/3CsnvpNIPp+ym20KnwtwNRiFHffLDmI2d31ar5x4JLHO2xc0/+ujffg138OJO5ratsCkBc0MksIgJm2aa/72RPR5cvIoMQVI87kWNI9Sveua90BkzfMKXDPtOIhmJwvvmvdAlAQNOB4GGQwLnD9lk8qC7WyIMTytV048kiieXk3gM8T0LVk8Xi3u8y4IauZWq+xNRI8tpCjvmvdAxLy96ksJ9Wm3BfD5vC+i+DyH8Mbx5WtM493nnRDZ55D1Va7ElBt1180174FoY/tcA/yYanPJ7IH44Zr3QDR5ewzhcT6vpyfw9XlvxNrnCxDVr0XZVLHxOlw3RFOHS1laIKV0NW+fmpndNX97IuftgVyADWV9nu+248A1f38iq1qlDcOqMMOgHNu9DtcHUWJ73UPL5Xeq0nFp7j7vg2g1L8Yu9Zf8UM7wXPMeiBLW61n25OmmNtc855q/P7E9JxPj+O2JKNJGi2v+/sT2dyxtDlcOTtRdVde8A6LE7LKpEqCegisVVwDfY+mDYGPnvD6n2W1JzwWP7X0SdgDM9pK+7EP25/QRh4AdfrBXTnwncePzUoVtluZeb++KWM/nWu+rpeNxq51W1/ztidvfseRFej0NWQ/LuOY9EOb/T8YJJ5xwojviL7vwMP/ptBReAAAAAElFTkSuQmCC\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Payment",
+							"item": [
+								{
+									"name": "Payment to restaurantId",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "user-id",
+												"value": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"point\": \"100.00\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:9000/payments/restaurants/a3cbc4f1-3636-4db9-bb42-36c49ba655b9",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"payments",
+												"restaurants",
+												"a3cbc4f1-3636-4db9-bb42-36c49ba655b9"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Thanaphoom => SHOP-1",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "user-id",
+														"value": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"point\": \"100.00\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:9000/payments/restaurants/a3cbc4f1-3636-4db9-bb42-36c49ba655b9",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9000",
+													"path": [
+														"payments",
+														"restaurants",
+														"a3cbc4f1-3636-4db9-bb42-36c49ba655b9"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "content-length",
+													"value": "0"
+												}
+											],
+											"cookie": [],
+											"body": null
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Point",
+							"item": [
+								{
+									"name": "Get my point",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "user-id",
+												"value": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:9000/points/me",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"points",
+												"me"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Get my point",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "user-id",
+														"value": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:9000/points/me",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9000",
+													"path": [
+														"points",
+														"me"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "91"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"referenceId\": \"d37b2d0b-c06d-429c-b56d-7465c3959993\",\n    \"current\": 1200,\n    \"type\": \"INDIVIDUAL\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Get transaction history by referenceId",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "user-id",
+												"value": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\n    getTransactionHistory(refId: \"d37b2d0b-c06d-429c-b56d-7465c3959993\") {\n        point\n        balancePoint\n        createdDate\n    }\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:9000/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Get transaction history by referenceId",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "user-id",
+														"value": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "{\n    getTransactionHistory(refId: \"d37b2d0b-c06d-429c-b56d-7465c3959993\") {\n        point\n        balancePoint\n        createdDate\n    }\n}",
+														"variables": ""
+													}
+												},
+												"url": {
+													"raw": "http://localhost:9000/graphql",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9000",
+													"path": [
+														"graphql"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "270"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"getTransactionHistory\": [\n            {\n                \"point\": 100,\n                \"balancePoint\": 100,\n                \"createdDate\": \"2022-08-22T12:04:59.242\"\n            },\n            {\n                \"point\": 1200,\n                \"balancePoint\": 1300,\n                \"createdDate\": \"2022-08-22T12:06:29.742\"\n            },\n            {\n                \"point\": 100,\n                \"balancePoint\": 1200,\n                \"createdDate\": \"2022-08-22T12:24:38.482\"\n            }\n        ]\n    }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Rating",
+							"item": [
+								{
+									"name": "Get rating from referenceId",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "user-id",
+												"value": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\n    getRatingById(id: \"a3cbc4f1-3636-4db9-bb42-36c49ba655b9\") {\n        rating\n    }\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:9000/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Before - Get rating from a3cbc4f1-3636-4db9-bb42-36c49ba655b9 [SHOP-1]",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "user-id",
+														"value": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "{\n    getRatingById(id: \"a3cbc4f1-3636-4db9-bb42-36c49ba655b9\") {\n        rating\n    }\n}",
+														"variables": ""
+													}
+												},
+												"url": {
+													"raw": "http://localhost:9000/graphql",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9000",
+													"path": [
+														"graphql"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "41"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"getRatingById\": {\n            \"rating\": 0\n        }\n    }\n}"
+										},
+										{
+											"name": "After Get rating from a3cbc4f1-3636-4db9-bb42-36c49ba655b9 [SHOP-1]",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "user-id",
+														"value": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "{\n    getRatingById(id: \"a3cbc4f1-3636-4db9-bb42-36c49ba655b9\") {\n        rating\n    }\n}",
+														"variables": ""
+													}
+												},
+												"url": {
+													"raw": "http://localhost:9000/graphql",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9000",
+													"path": [
+														"graphql"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "41"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"getRatingById\": {\n            \"rating\": 4\n        }\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Submit rating",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "user-id",
+												"value": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "mutation {\n    sendRating(\n        id: \"a3cbc4f1-3636-4db9-bb42-36c49ba655b9\",\n        fromId: \"d37b2d0b-c06d-429c-b56d-7465c3959993\",\n        type: \"RESTAURANT\",\n        rating: 4\n    ) \n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:9000/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9000",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Submit rating",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "user-id",
+														"value": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "graphql",
+													"graphql": {
+														"query": "mutation {\n    sendRating(\n        id: \"a3cbc4f1-3636-4db9-bb42-36c49ba655b9\",\n        fromId: \"d37b2d0b-c06d-429c-b56d-7465c3959993\",\n        type: \"RESTAURANT\",\n        rating: 4\n    ) \n}",
+														"variables": ""
+													}
+												},
+												"url": {
+													"raw": "http://localhost:9000/graphql",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9000",
+													"path": [
+														"graphql"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "28"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"sendRating\": true\n    }\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "Create Order",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "user-id",
+										"value": "d37b2d0b-c06d-429c-b56d-7465c3959993",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"driverId\": \"93e16962-57d0-4a27-b8f4-8db20f29b25a\",\n    \"type\": \"DELIVER\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9000/orders",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				},
 				{
 					"name": "Driver",
 					"item": [
 						{
-							"name": "Get Location History",
+							"name": "1 - Get Active",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "user-id",
+										"value": "93e16962-57d0-4a27-b8f4-8db20f29b25a",
+										"type": "text"
+									}
+								],
 								"url": {
-									"raw": "http://localhost:9001/drivers/dlv01GAZYJKRS640VGQVTBCYEQXD3/history",
+									"raw": "http://localhost:9001/drivers/active",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -30,28 +1524,32 @@
 									"port": "9001",
 									"path": [
 										"drivers",
-										"dlv01GAZYJKRS640VGQVTBCYEQXD3",
-										"history"
+										"active"
 									]
 								}
 							},
 							"response": [
 								{
-									"name": "Success",
+									"name": "Success get list",
 									"originalRequest": {
 										"method": "GET",
-										"header": [],
+										"header": [
+											{
+												"key": "user-id",
+												"value": "93e16962-57d0-4a27-b8f4-8db20f29b25a",
+												"type": "text"
+											}
+										],
 										"url": {
-											"raw": "http://localhost:8080/drivers/dlv01GAZYJKRS640VGQVTBCYEQXD3/history",
+											"raw": "http://localhost:9001/drivers/active",
 											"protocol": "http",
 											"host": [
 												"localhost"
 											],
-											"port": "8080",
+											"port": "9001",
 											"path": [
 												"drivers",
-												"dlv01GAZYJKRS640VGQVTBCYEQXD3",
-												"history"
+												"active"
 											]
 										}
 									},
@@ -69,12 +1567,12 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\n    {\n        \"geoPoint\": {\n            \"y\": \"-1.267500747750418\",\n            \"x\": \"-75.98722249746349\"\n        },\n        \"id\": \"01GB1S6TE16T3NKPYX6614GHDB\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138594197\n    },\n    {\n        \"geoPoint\": {\n            \"y\": \"44.03405769996763\",\n            \"x\": \"104.36761355138839\"\n        },\n        \"id\": \"01GB1S6WCHS32RW66ZC4X4BZ38\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138596197\n    },\n    {\n        \"geoPoint\": {\n            \"y\": \"58.271132730864394\",\n            \"x\": \"39.037586528968376\"\n        },\n        \"id\": \"01GB1S6YB1J4TWXZS1JQG43C9P\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138598197\n    },\n    {\n        \"geoPoint\": {\n            \"y\": \"37.06047806344927\",\n            \"x\": \"96.95436094662017\"\n        },\n        \"id\": \"01GB1S709G8NVRHQ9AMK53BC5J\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138600197\n    },\n    {\n        \"geoPoint\": {\n            \"y\": \"-15.073007455568685\",\n            \"x\": \"61.24854852755519\"\n        },\n        \"id\": \"01GB1S7280GQER8KHKZMM9182Q\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138602197\n    },\n    {\n        \"geoPoint\": {\n            \"y\": \"-80.07022536214177\",\n            \"x\": \"73.2286909758026\"\n        },\n        \"id\": \"01GB1S746GPH4E5DY8DWZWWC9K\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138604197\n    },\n    {\n        \"geoPoint\": {\n            \"y\": \"18.89862071982806\",\n            \"x\": \"-76.16792721360912\"\n        },\n        \"id\": \"01GB1S7650DGJTAYKZR068JM6K\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138606197\n    },\n    {\n        \"geoPoint\": {\n            \"y\": \"50.783175676828876\",\n            \"x\": \"-140.83772746550375\"\n        },\n        \"id\": \"01GB1S783GB2N87CC522ZM3DFD\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138608197\n    },\n    {\n        \"geoPoint\": {\n            \"y\": \"-57.601418692318916\",\n            \"x\": \"73.14925193975085\"\n        },\n        \"id\": \"01GB1S7A2100R21X3TAS3HZ1PH\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138610197\n    },\n    {\n        \"geoPoint\": {\n            \"y\": \"56.90198711448264\",\n            \"x\": \"169.4868034352569\"\n        },\n        \"id\": \"01GB1S7C0GNKNFS6QGNHBCW8JC\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138612197\n    }\n]"
+									"body": "[\n    {\n        \"id\": \"dlv01GB2XHSFJ2TBDN5NJG9HNM3X5\",\n        \"type\": \"DELIVER\",\n        \"createdDate\": \"2022-08-22T13:58:23.646\"\n    }\n]"
 								}
 							]
 						},
 						{
-							"name": "Accept Order",
+							"name": "2 - Accept Order",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -180,12 +1678,65 @@
 									"body": null
 								}
 							]
+						},
+						{
+							"name": "3 - Get Location History",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9001/drivers/dlv01GAZYJKRS640VGQVTBCYEQXD3/history",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9001",
+									"path": [
+										"drivers",
+										"dlv01GAZYJKRS640VGQVTBCYEQXD3",
+										"history"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/drivers/dlv01GAZYJKRS640VGQVTBCYEQXD3/history",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"drivers",
+												"dlv01GAZYJKRS640VGQVTBCYEQXD3",
+												"history"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "transfer-encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"geoPoint\": {\n            \"y\": \"-1.267500747750418\",\n            \"x\": \"-75.98722249746349\"\n        },\n        \"id\": \"01GB1S6TE16T3NKPYX6614GHDB\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138594197\n    },\n    {\n        \"geoPoint\": {\n            \"y\": \"44.03405769996763\",\n            \"x\": \"104.36761355138839\"\n        },\n        \"id\": \"01GB1S6WCHS32RW66ZC4X4BZ38\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138596197\n    },\n    {\n        \"geoPoint\": {\n            \"y\": \"58.271132730864394\",\n            \"x\": \"39.037586528968376\"\n        },\n        \"id\": \"01GB1S6YB1J4TWXZS1JQG43C9P\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138598197\n    },\n    {\n        \"geoPoint\": {\n            \"y\": \"37.06047806344927\",\n            \"x\": \"96.95436094662017\"\n        },\n        \"id\": \"01GB1S709G8NVRHQ9AMK53BC5J\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138600197\n    },\n    {\n        \"geoPoint\": {\n            \"y\": \"-15.073007455568685\",\n            \"x\": \"61.24854852755519\"\n        },\n        \"id\": \"01GB1S7280GQER8KHKZMM9182Q\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138602197\n    },\n    {\n        \"geoPoint\": {\n            \"y\": \"-80.07022536214177\",\n            \"x\": \"73.2286909758026\"\n        },\n        \"id\": \"01GB1S746GPH4E5DY8DWZWWC9K\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138604197\n    },\n    {\n        \"geoPoint\": {\n            \"y\": \"18.89862071982806\",\n            \"x\": \"-76.16792721360912\"\n        },\n        \"id\": \"01GB1S7650DGJTAYKZR068JM6K\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138606197\n    },\n    {\n        \"geoPoint\": {\n            \"y\": \"50.783175676828876\",\n            \"x\": \"-140.83772746550375\"\n        },\n        \"id\": \"01GB1S783GB2N87CC522ZM3DFD\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138608197\n    },\n    {\n        \"geoPoint\": {\n            \"y\": \"-57.601418692318916\",\n            \"x\": \"73.14925193975085\"\n        },\n        \"id\": \"01GB1S7A2100R21X3TAS3HZ1PH\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138610197\n    },\n    {\n        \"geoPoint\": {\n            \"y\": \"56.90198711448264\",\n            \"x\": \"169.4868034352569\"\n        },\n        \"id\": \"01GB1S7C0GNKNFS6QGNHBCW8JC\",\n        \"referenceId\": \"dlv01GAZYJKRS640VGQVTBCYEQXD3\",\n        \"driverId\": \"8985954f-7925-42c9-a1e5-e6b4bad5fd6c\",\n        \"timestamp\": 1661138612197\n    }\n]"
+								}
+							]
 						}
 					]
-				},
-				{
-					"name": "Management",
-					"item": []
 				}
 			]
 		},
