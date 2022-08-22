@@ -142,7 +142,7 @@ public class ExternalEmployeeService implements EmployeeService {
 
   @Override
   public Mono<Employee> createEmployee(Employee employee) {
-    return this.employeeWebClient.put()
+    return this.employeeWebClient.post()
         .uri(PATH)
         .header("requestUid", UUID.randomUUID().toString())
         .bodyValue(employee)
