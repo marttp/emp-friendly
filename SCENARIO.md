@@ -27,8 +27,8 @@ EmpFriendly concept - do something that can improve employee life and give oppor
 
 ## Driver
 
-- [ ] Take the transport request **[Journey]**
-- [ ] Take the delivery request **[Deliver]**
+- [x] Take the transport request **[Journey]**
+- [x] Take the delivery request **[Deliver]**
 
 ## Restaurant Partner
 
