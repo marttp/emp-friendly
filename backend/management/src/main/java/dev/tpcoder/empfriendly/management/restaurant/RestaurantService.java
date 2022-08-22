@@ -7,7 +7,7 @@ public interface RestaurantService {
 
   Flux<Restaurant> getRestaurants();
 
-  Mono<Restaurant> createRestaurant(Restaurant restaurant);
+  Mono<Restaurant> createRestaurant(CreateRestaurantRequest restaurant);
 
   Mono<Void> deleteRestaurant(String restaurantId);
 }
