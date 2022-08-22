@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emp-friendly-management
+  namespace: emp-friendly
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emp-friendly-management
+  template:
+    metadata:
+      labels:
+        app: emp-friendly-management
+    spec:
+      containers:
+        - name: emp-friendly-management
+          image: marttp/emp-friendly-management
+          resources:
+            requests:
+              cpu: 300m
+              memory: 512Mi
+            limits:
+              cpu: 300m
+              memory: 512Mi
+          ports:
+            - containerPort: 8080
+              name: management
+              protocol: TCP
+          env:
+            - name: POINT_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: POINT_SERVICE_URL
+            - name: RESTAURANT_MANAGEMENT_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: RESTAURANT_MANAGEMENT_SERVICE_URL
+            - name: EMPLOYEE_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: emp-friendly-cm
+                  key: EMPLOYEE_SERVICE_URL
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: emp-friendly-management
+  namespace: emp-friendly
+spec:
+  internalTrafficPolicy: Cluster
+  ports:
+    - name: emp-friendly-management
+      port: 50201
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: emp-friendly-management
+  type: ClusterIP
