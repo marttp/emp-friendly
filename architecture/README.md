@@ -20,11 +20,11 @@
 
 ### Aggregator layer
 
-- [ ] **General** - Spring WebFlux (Kotlin) + GraphQL :50200
+- [x] **General** - Spring WebFlux (Kotlin) + GraphQL :50200
 
-- [ ] **Driver** - Spring WebFlux (Java) :50201
+- [x] **Driver** - Spring WebFlux (Java) :50201
 
-- [ ] **Management** - Spring WebFlux + GraphQL (Java) :50202
+- [x] **Management** - Spring WebFlux + GraphQL (Java) :50202
 
 ### Internal layer
 
