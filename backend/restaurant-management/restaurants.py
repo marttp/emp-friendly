@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 restaurants = APIRouter()
 
 
-@restaurants.post('/', response_model=Restaurant, status_code=201)
+@restaurants.post('', response_model=Restaurant, status_code=201)
 async def create(payload: RestaurantModel):
     log.info("Create Restaurant")
     restaurant = Restaurant(
@@ -27,7 +27,7 @@ async def create(payload: RestaurantModel):
     return restaurant
 
 
-@restaurants.get('/', response_model=List[Restaurant])
+@restaurants.get('', response_model=List[Restaurant])
 async def read() -> List[Restaurant]:
     log.info("Read All Restaurant")
     return Restaurant.find().all()
