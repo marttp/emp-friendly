@@ -50,7 +50,7 @@ spec:
     - name: emp-friendly-rating
       port: 50209
       protocol: TCP
-      targetPort: 8080
+      targetPort: 8000
   selector:
     app: emp-friendly-rating
   type: ClusterIP

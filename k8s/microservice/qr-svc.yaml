@@ -24,7 +24,7 @@ spec:
               cpu: 300m
               memory: 512Mi
           ports:
-            - containerPort: 8080
+            - containerPort: 8000
               name: qr-service
               protocol: TCP
           env:
@@ -70,7 +70,7 @@ spec:
     - name: emp-friendly-qr-service
       port: 50208
       protocol: TCP
-      targetPort: 8080
+      targetPort: 8000
   selector:
     app: emp-friendly-qr-service
   type: ClusterIP
