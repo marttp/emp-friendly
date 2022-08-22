@@ -59,8 +59,6 @@ kind: Service
 metadata:
   name: emp-friendly-general
   namespace: emp-friendly
-  labels:
-    field.cattle.io/projectId: p-82znb
 spec:
   internalTrafficPolicy: Cluster
   ports:

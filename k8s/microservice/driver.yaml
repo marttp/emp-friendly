@@ -44,8 +44,6 @@ kind: Service
 metadata:
   name: emp-friendly-driver
   namespace: emp-friendly
-  labels:
-    field.cattle.io/projectId: p-82znb
 spec:
   internalTrafficPolicy: Cluster
   ports:
