@@ -9,4 +9,4 @@ class RatingHistory(JsonModel):
     target_id: str = Field(index=True)
     type: str = Field(index=True)
     rate: PositiveInt = Field(index=True)
-    created_date: datetime.datetime
+    timestamp: PositiveInt

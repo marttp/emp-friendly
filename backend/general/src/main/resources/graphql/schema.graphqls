@@ -14,5 +14,5 @@ type Rating {
 type Transaction {
     point: Float,
     balancePoint: Float,
-    createDate: String
+    createdDate: String
 }

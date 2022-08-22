@@ -10,21 +10,6 @@ bp = Blueprint("Rating", url_prefix="/ratings")
 client = get_redis_connection()
 
 
-# @bp.get('/')
-# async def hello(request) -> HTTPResponse:
-#     body = {
-#         'user_id': 'test_user',
-#         'target_id': 'test_target',
-#         'type': 'Restaurant',
-#         'rate': 5,
-#         'created_date': datetime.utcnow()
-#     }
-#     await client.publish(received_rating_topic, json.dumps(body, default=str))
-#     return response.json({'status': 'Success'})
-
-# {"user_id": "test_user", "target_id": "test_target", "type": "Restaurant", "rate": 3, "created_date": "2022-08-17 02:17:30.176224"}
-
-
 @bp.get('/<target_id:str>')
 async def get_rating_by_id(request: Request, target_id: str) -> HTTPResponse:
     rating_list = RatingHistory.find(RatingHistory.target_id == target_id).all()
@@ -40,5 +25,6 @@ async def get_rating_by_id(request: Request, target_id: str) -> HTTPResponse:
 @bp.post('/')
 async def add_rating(request: Request) -> HTTPResponse:
     body = request.json
+    print(body)
     await client.publish(received_rating_topic, json.dumps(body, default=str))
     return response.empty(status=201)

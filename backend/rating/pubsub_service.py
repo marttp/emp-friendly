@@ -1,4 +1,5 @@
 import json
+import logging
 
 from sanic.log import logger
 from models import RatingHistory
@@ -8,9 +9,11 @@ from redis.client import PubSub
 
 async def handle_message(message: dict):
     data = message['data']
+    print(data)
     data = json.loads(data)
     channel = message['channel'].decode()
     if channel == received_rating_topic:
+        print(data)
         new_rating_history = RatingHistory(**data)
         logger.info(new_rating_history)
         new_rating_history.save()
