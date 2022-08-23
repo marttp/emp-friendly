@@ -17,11 +17,8 @@ spec:
         - name: emp-friendly-general
           image: marttp/emp-friendly-general
           resources:
-            requests:
-              cpu: 300m
-              memory: 512Mi
             limits:
-              cpu: 300m
+              cpu: 200m
               memory: 512Mi
           ports:
             - containerPort: 8080
@@ -60,7 +57,6 @@ metadata:
   name: emp-friendly-general
   namespace: emp-friendly
 spec:
-  internalTrafficPolicy: Cluster
   ports:
     - name: emp-friendly-general
       port: 50200

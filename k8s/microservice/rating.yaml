@@ -17,11 +17,8 @@ spec:
         - name: emp-friendly-rating
           image: marttp/emp-friendly-rating
           resources:
-            requests:
-              cpu: 300m
-              memory: 512Mi
             limits:
-              cpu: 300m
+              cpu: 200m
               memory: 512Mi
           ports:
             - containerPort: 8000
@@ -45,7 +42,6 @@ metadata:
   name: emp-friendly-rating
   namespace: emp-friendly
 spec:
-  internalTrafficPolicy: Cluster
   ports:
     - name: emp-friendly-rating
       port: 50209
