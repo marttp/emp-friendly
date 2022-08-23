@@ -17,11 +17,8 @@ spec:
         - name: emp-friendly-invoice
           image: marttp/emp-friendly-invoice
           resources:
-            requests:
-              cpu: 300m
-              memory: 512Mi
             limits:
-              cpu: 300m
+              cpu: 200m
               memory: 512Mi
           ports:
             - containerPort: 8000

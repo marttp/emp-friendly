@@ -17,11 +17,8 @@ spec:
         - name: emp-friendly-driver
           image: marttp/emp-friendly-driver
           resources:
-            requests:
-              cpu: 300m
-              memory: 512Mi
             limits:
-              cpu: 300m
+              cpu: 200m
               memory: 512Mi
           ports:
             - containerPort: 8080
@@ -45,7 +42,6 @@ metadata:
   name: emp-friendly-driver
   namespace: emp-friendly
 spec:
-  internalTrafficPolicy: Cluster
   ports:
     - name: emp-friendly-driver
       port: 50201
