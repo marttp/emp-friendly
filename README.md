@@ -1,6 +1,6 @@
 # EmpFriendly
 
-EmpFriendly [Redis Hackathon on DEV 2022] - Support you employees and strive to be better
+EmpFriendly [Redis Hackathon on DEV 2022] - Support your employees and strive to be better
 
 This project will show the overview of microservices architecture that design base on Cloud-Native approach (actually, some parts still missing because need to compete with the times), In this regards, I design to show how we can implement it from scratch including RESTful/GraphQL API, Aggregation Pattern, Asynchronous messaging with Pub/Sub and Streams.
 
@@ -20,13 +20,17 @@ This project will show the overview of microservices architecture that design ba
 
 ![Streaming display from redisinsights](screenshots/streaming-topic-redisinsights.png)
 
-# [TODO] Overview video
+# Overview video
 
 Here's a short video that explains the project and how it uses Redis:
 
-[Insert your own video here, and remove the one below]
+[![Overview explaination video](https://img.youtube.com/vi/ML5Vc8LkZwg/0.jpg)](https://youtu.be/ML5Vc8LkZwg)
 
-[![Embed your YouTube video](https://i.ytimg.com/vi/vyxdC1qK4NE/maxresdefault.jpg)](https://www.youtube.com/watch?v=vyxdC1qK4NE)
+# Demo/Walkthrough video
+
+Here's a video that shows how api work and explain implementation in some technical:
+
+[![Walkthrough video](https://img.youtube.com/vi/B-5_xpC3D8A/0.jpg)](https://youtu.be/B-5_xpC3D8A)
 
 ## How it works
 
@@ -365,3 +369,35 @@ Including Aggregator Collection - General, Driver, Management related
 ## Deployment
 
 To make deploys work, you need to create free account on [Redis Cloud](https://redis.info/try-free-dev-to)
+
+---
+
+## Appendix 1 - List of hardcode initialize id
+
+**USER_ID - ORDINARY**
+
+d37b2d0b-c06d-429c-b56d-7465c3959993
+
+ddf5757a-ca21-41f4-b668-836d7755d70d
+
+1636a414-1f16-45b9-8e36-28507c108be9
+
+**USER_ID - DRIVER**
+
+8985954f-7925-42c9-a1e5-e6b4bad5fd6c
+
+1b4a4de9-0eca-4c73-97c6-e1b9df06678e
+
+93e16962-57d0-4a27-b8f4-8db20f29b25a
+
+**RESTAURANT_ID**
+
+a3cbc4f1-3636-4db9-bb42-36c49ba655b9
+
+d72d77fb-e96d-4d9a-964d-f2bf605c7e0b
+
+c820da4c-d8de-4229-848b-33e5f183a22c
+
+f084e35a-f745-4c86-b0d5-aae81bd632a9
+
+d31710fc-ba84-4ef9-ae2e-3c8e38e1c84c
