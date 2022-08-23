@@ -13,12 +13,13 @@
     "language": ["Java", "Kotlin", "Python"],
     "redis_commands": [
         "XGROUP",
-        "JSON.GET"
+        "JSON.GET",
+        "JSON.SET"
     ],
     "redis_features": ["primary database", "stream", "pub/sub"],
     "redis_modules": ["RedisJSON", "RediSearch", "RedisStreams"],
     "app_image_urls": [],
-    "youtube_url": "", //Provide a Youtube link to your app's video
+    "youtube_url": "https://www.youtube.com/watch?v=ML5Vc8LkZwg&ab_channel=TPCoder",
     "special_tags": ["Hackathon"],
     "verticals": ["Technology"], 
     "markdown": "https://raw.githubusercontent.com/marttp/emp-friendly/main/README.md"
